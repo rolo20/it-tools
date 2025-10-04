@@ -59,6 +59,9 @@ dependencies:
   '@kenjiuno/msgreader':
     specifier: ^1.22.0
     version: 1.22.0
+  '@langfreak/convert-layout':
+    specifier: ^0.11.2
+    version: 0.11.2
   '@mdit/plugin-align':
     specifier: ^0.16.0
     version: 0.16.0(markdown-it@14.1.0)
@@ -5043,6 +5046,12 @@ packages:
       iconv-lite: 0.6.3
     dev: false
 
+  /@langfreak/convert-layout@0.11.2:
+    resolution: {integrity: sha512-O0k7+cnb5uMPbaBYJ42aLilOdi/d4c8e2MVxjXb+zTBdbR/3tJpaeXN8xOu3qMNoJKyyT9979EDF6bY/gFKAmw==}
+    dependencies:
+      fs-extra: 11.3.2
+    dev: false
+
   /@leichtgewicht/base64-codec@1.0.0:
     resolution: {integrity: sha512-0cgP4lRBzh3F4tlpTfs7F+PJyBN8j5yUC9KrQFWp/bREswgzZVHE8T1rNyRDWgvALwwpPtnJDQfqWUmxI33Epg==}
     dev: false
@@ -7463,7 +7472,7 @@ packages:
     dependencies:
       '@unhead/dom': 0.5.1
       '@unhead/schema': 0.5.1
-      '@vueuse/shared': 13.8.0(vue@3.3.4)
+      '@vueuse/shared': 13.9.0(vue@3.3.4)
       unhead: 0.5.1
       vue: 3.3.4
     dev: false
@@ -8125,8 +8134,8 @@ packages:
       - vue
     dev: false
 
-  /@vueuse/shared@13.8.0(vue@3.3.4):
-    resolution: {integrity: sha512-x4nfM0ykW+RmNJ4/1IzZsuLuWWrNTxlTWUiehTGI54wnOxIgI9EDdu/O5S77ac6hvQ3hk2KpOVFHaM0M796Kbw==}
+  /@vueuse/shared@13.9.0(vue@3.3.4):
+    resolution: {integrity: sha512-e89uuTLMh0U5cZ9iDpEI2senqPGfbPRTHM/0AaQkcxnpqjkZqDYP8rpfm7edOz8s+pOCOROEy1PIveSW8+fL5g==}
     peerDependencies:
       vue: ^3.5.0
     dependencies:
@@ -12070,6 +12079,15 @@ packages:
       universalify: 2.0.1
     dev: true
 
+  /fs-extra@11.3.2:
+    resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
+    engines: {node: '>=14.14'}
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
+    dev: false
+
   /fs-extra@9.1.0:
     resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
     engines: {node: '>=10'}
@@ -13896,7 +13914,6 @@ packages:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
-    dev: true
 
   /jsonlint-mod@1.7.6:
     resolution: {integrity: sha512-oGuk6E1ehmIpw0w9ttgb2KsDQQgGXBzZczREW8OfxEm9eCQYL9/LCexSnh++0z3AiYGcXpBgqDSx9AAgzl/Bvg==}
@@ -18857,7 +18874,6 @@ packages:
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
-    dev: true
 
   /unixcrypt-browser@2.0.4:
     resolution: {integrity: sha512-c1Onql8IVzUjQVW0jra39VEa4f8iIr1XAlZ2oOa0U094gM77rcbDbkcWMQux+j2Qqr7wFXByIcvL6CoL0DkkmQ==}
