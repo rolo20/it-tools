@@ -7,50 +7,67 @@ import { useQueryParam } from '@/composable/queryParams';
 
 const { t } = useI18n();
 
-const rawIban = useQueryParam({ tool: 'iban-validator', name: 'iban', defaultValue: '' });
+const rawIbans = useQueryParam({ tool: 'iban-validator', name: 'iban', defaultValue: '' });
 
-const ibanInfo = computed<CKeyValueListItems>(() => {
-  const iban = rawIban.value.toUpperCase().replace(/\s/g, '').replace(/-/g, '');
+interface IbanInfo {
+  iban: string
+  infos: CKeyValueListItems
+}
 
-  if (iban === '') {
+const ibansInfo = computed<IbanInfo[]>(() => {
+  if (!rawIbans.value?.trim()) {
+    return [];
+  }
+  const ibans = rawIbans.value.toUpperCase()
+    .split(/\n/).map(iban => iban.replace(/\s/g, '').replace(/-/g, ''))
+    .filter(Boolean);
+
+  if (!ibans.length) {
     return [];
   }
 
-  const { valid: isIbanValid, errorCodes } = validateIBAN(iban);
-  const { countryCode, bban } = extractIBAN(iban);
-  const errors = getFriendlyErrors(errorCodes);
+  const results: IbanInfo[] = [];
 
-  return [
+  for (const iban of ibans) {
+    const { valid: isIbanValid, errorCodes } = validateIBAN(iban);
+    const { countryCode, bban } = extractIBAN(iban);
+    const errors = getFriendlyErrors(errorCodes);
 
-    {
-      label: t('tools.iban-validator-and-parser.texts.label-is-iban-valid'),
-      value: isIbanValid,
-      showCopyButton: false,
-    },
-    {
-      label: t('tools.iban-validator-and-parser.texts.label-iban-errors'),
-      value: errors.length === 0 ? undefined : errors,
-      hideOnNil: true,
-      showCopyButton: false,
-    },
-    {
-      label: t('tools.iban-validator-and-parser.texts.label-is-iban-a-qr-iban'),
-      value: isQRIBAN(iban),
-      showCopyButton: false,
-    },
-    {
-      label: t('tools.iban-validator-and-parser.texts.label-country-code'),
-      value: countryCode,
-    },
-    {
-      label: t('tools.iban-validator-and-parser.texts.label-bban'),
-      value: bban,
-    },
-    {
-      label: t('tools.iban-validator-and-parser.texts.label-iban-friendly-format'),
-      value: friendlyFormatIBAN(iban),
-    },
-  ];
+    results.push({
+      iban,
+      infos: [
+        {
+          label: t('tools.iban-validator-and-parser.texts.label-is-iban-valid'),
+          value: isIbanValid,
+          showCopyButton: false,
+        },
+        {
+          label: t('tools.iban-validator-and-parser.texts.label-iban-errors'),
+          value: errors.length === 0 ? undefined : errors,
+          hideOnNil: true,
+          showCopyButton: false,
+        },
+        {
+          label: t('tools.iban-validator-and-parser.texts.label-is-iban-a-qr-iban'),
+          value: isQRIBAN(iban),
+          showCopyButton: false,
+        },
+        {
+          label: t('tools.iban-validator-and-parser.texts.label-country-code'),
+          value: countryCode,
+        },
+        {
+          label: t('tools.iban-validator-and-parser.texts.label-bban'),
+          value: bban,
+        },
+        {
+          label: t('tools.iban-validator-and-parser.texts.label-iban-friendly-format'),
+          value: friendlyFormatIBAN(iban),
+        },
+      ],
+    });
+  }
+  return results;
 });
 
 const ibanExamples = [
@@ -62,10 +79,18 @@ const ibanExamples = [
 
 <template>
   <div>
-    <c-input-text v-model:value="rawIban" :placeholder="t('tools.iban-validator-and-parser.texts.placeholder-enter-an-iban-to-check-for-validity')" test-id="iban-input" />
+    <c-input-text
+      v-model:value="rawIbans"
+      multiline
+      rows="4"
+      :placeholder="t('tools.iban-validator-and-parser.texts.placeholder-enter-an-iban-to-check-for-validity')"
+      test-id="iban-input"
+    />
 
-    <c-card v-if="ibanInfo.length > 0" mt-5>
-      <c-key-value-list :items="ibanInfo" data-test-id="iban-info" />
+    <c-card v-for="ibanInfo in ibansInfo" :key="ibanInfo.iban" :title="ibanInfo.iban" mt-3>
+      <c-card mt-5>
+        <c-key-value-list :items="ibanInfo.infos" data-test-id="iban-info" />
+      </c-card>
     </c-card>
 
     <c-card :title="t('tools.iban-validator-and-parser.texts.title-valid-iban-examples')" mt-5>
