@@ -83,7 +83,7 @@ const ibanExamples = [
       v-model:value="rawIbans"
       multiline
       rows="4"
-      :placeholder="t('tools.iban-validator-and-parser.texts.placeholder-enter-an-iban-to-check-for-validity')"
+      :placeholder="t('tools.iban-validator-and-parser.texts.placeholder-enter-ibans-to-check-for-validity')"
       test-id="iban-input"
     />
 

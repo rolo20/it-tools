@@ -5558,6 +5558,7 @@ tools:
       label-iban-friendly-format: IBAN friendly format
       placeholder-enter-an-iban-to-check-for-validity: Enter an IBAN to check for validity...
       title-valid-iban-examples: Valid IBAN examples
+      placeholder-enter-ibans-to-check-for-validity: Enter an IBAN per line to check for validity
     service:
       text:
         qr-iban-not-allowed: QR-IBAN not allowed
