@@ -3686,6 +3686,7 @@ tools:
       placeholder-e-g-https-example-com: e.g. https://example.com
       label-citation-style: Citation Style
       title-generated-citation: Generated Citation
+      label-vancouver: Vancouver
   cookies-parser:
     title: Cookies Parser
     description: Parse Cookie HTTP Header

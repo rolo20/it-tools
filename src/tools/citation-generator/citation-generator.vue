@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n';
 import { ref } from 'vue';
 import { APA, MLA } from 'citation-formatter';
+import { formatVancouverCitation } from './citation-generator.service';
 
 const { t } = useI18n();
 
@@ -25,14 +26,21 @@ const formattedCitation = computed(() => {
       || !citationData.value.year
       || !authors.length
     ) { return '### Please fill Title, Publisher, Year and authors'; }
+
+    const citationInData = {
+      authors,
+      title: citationData.value.title,
+      publisher: citationData.value.publisher,
+      year: citationData.value.year.toString(),
+      url: citationData.value.url,
+    };
+
+    if (style.value === 'vancouver') {
+      return formatVancouverCitation(citationInData);
+    }
     return (style.value === 'apa' ? APA : MLA)([
-      {
-        authors,
-        title: citationData.value.title,
-        publisher: citationData.value.publisher,
-        year: citationData.value.year,
-        url: citationData.value.url,
-      }]);
+      citationInData,
+    ]);
   }
   catch (e: any) {
     return e.toString();
@@ -72,6 +80,7 @@ const formattedCitation = computed(() => {
           :options="[
             { label: t('tools.citation-generator.texts.label-apa'), value: 'apa' },
             { label: t('tools.citation-generator.texts.label-mla'), value: 'mla' },
+            { label: t('tools.citation-generator.texts.label-vancouver'), value: 'vancouver' },
           ]"
         />
       </n-form-item>
