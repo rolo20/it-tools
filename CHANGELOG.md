@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2025.10.12
+
+### Features
+-  extract strings of new tools (9425d34)
+- **Citation Generator**: Add Vancouver Style (fdb39a8)
+- **new tool**: Database Connection String Generator (83a9fe5)
+- **new tool**: Niceware Bytes Passphrase Converter (4119b04)
+- **List Converter**: filter item regexps (330b18d)
+- **new tool**: Credit Card Checker and Info (6914e3e)
+- **new tool**: Random Credit Card Number Generator (545d7f0)
+- **IBAN Validator**: allow multiple IBANs (92a0dda)
+- **new tool**: Diceware Password Generator (ca64d2a)
+- **new tool**: IANA Whois Checker (825d90c)
+-  unit test for JSON.parseBigInt (fc9c0ab)
+- **new tool**: dBm mW Converter (cb3d366)
+- **new tool**: GTIN Validator (282acba)
+- **new tool**: Keyboard Layouts Converter (c02b358)
+- **About page**: import/export favorites (3ad6985)
+
+### Bug fixes
+- **Github Page**: pnpm 9 (50ffafc)
+- **IBAN Validator**: update placeholder regarding multiline input (b853dfa)
+- **Text To Unicode**: fix python \U padded to 8 for high ucods (a47e25a)
+- **JSON Bigint parser**: better handle large numbers in strings (116ee92)
+- **iso-3166-searcher**: timezones separator (3275c70)
+- **issues**: fix textarea always grows (#194) (bfb4a45)
+- **Energy Computer**: label and fixed precision (7655138)
+- **Text Translator**: filter available languages (46a1b9b)
+- **QR Code Generator**: Fixed an issue where the text input provided to the terminal QR code wasn't trimming leading/trailing spaces and newlines from the string (#189) (4b1ca28)
+- **QR Code Generator**: bring back multiline (71700b9)
+- **Docker**: remove CSP header (608ee95)
+
+### Continuous integration
+- **Docker**: fix VITE_VERCEL_ENV to production (8f160bb)
+
+### Chores
+- **Release**: remove commit hash from version (23b8534)
+-  contribute section (1236082)
+
+### Other
+-  Spelling error (#183) (abc0d11)
+
+### Merge branch 'chore/all-my-stuffs' of https
+-  //github.com/sharevb/it-tools into chore/all-my-stuffs (4fabdf9)
+
 ## Version 2025.08.31-13b8f041
 
 ### Features
