@@ -78,7 +78,7 @@ function ChildrenViewer({
   openTag: string
   closeTag: string
 }) {
-  const { children, key, status, type } = diff;
+  const { children, key, status, type, oldValue } = diff;
 
   return (
     <li>
@@ -90,9 +90,10 @@ function ChildrenViewer({
           </>
         )}
 
-        {openTag}
+        {children.length === 0 && status === 'removed' && Value({ value: oldValue, status: 'removed' })}
+        {children.length > 0 && openTag}
         {children.length > 0 && <ul>{children.map(diff => DiffViewer({ diff, showKeys: showChildrenKeys }))}</ul>}
-        {`${closeTag},`}
+        {children.length > 0 && `${closeTag},`}
       </div>
     </li>
   );
