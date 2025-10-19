@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2025.10.19
+
+### Features
+- **Script**: add a translation script for missing translations (a7776ba)
+
+### Bug fixes
+- **Scripts**: remove target languages unused + keep line break (8a89a78)
+- **Scripts**: translate only if missing + handle &#39; (7516aae)
+- **Scripts**: extract string, avoid if has already t() + /* NO EXTRACT SCRIPT */ (c30d598)
+- **i18n**: wrong input-label,... text extractions (2025111)
+- **Tools Filtering**: filter tools everywhere (2c2643b)
+- **JSON Diff**: display removed original text (de2de50)
+
+### Chores
+-  update some deps (01928b3)
+-  optimize unit test memory use (fb99fb2)
+-  add script:translate-missing (3f8d2db)
+-  add a stable tag on release (f6411f8)
+-  add buymeacoffee (087860c)
+
+### Other
+-  Update fr.yml fix few punctuations (#201) (c1d962c)
+
+### I18n
+-  auto translatte missing + add da, it, nl, tr, kr (3ba3b22)
+
+### Merge branch 'chore/all-my-stuffs' of https
+-  //github.com/sharevb/it-tools into chore/all-my-stuffs (aab0e2e)
+
 ## Version 2025.10.12
 
 ### Features
