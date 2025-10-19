@@ -16,7 +16,7 @@ const firstLicence = ref('GPL-3.0');
 const secondLicence = ref('MIT');
 const compatibility = computed(() => {
   try {
-    return satisfies(firstLicence.value.split(':')[0], secondLicence.value.split(':')[0]) ? 'ok' : 'nok';
+    return satisfies(firstLicence.value.split(':')[0], [secondLicence.value.split(':')[0]]) ? 'ok' : 'nok';
   }
   catch (e: any) {
     return e.toString();
