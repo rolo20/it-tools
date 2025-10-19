@@ -2,49 +2,15 @@ import { type MaybeRef, get } from '@vueuse/core';
 import { defineStore } from 'pinia';
 import type { Ref } from 'vue';
 import _ from 'lodash';
-import type { Tool, ToolCategory, ToolWithCategory, ToolsFilter } from './tools.types';
+import type { Tool, ToolCategory, ToolWithCategory } from './tools.types';
 import { tools as allTools } from './index';
 import { useITStorage } from '@/composable/queryParams';
-
-const base = import.meta.env.BASE_URL ?? '/';
-let filterConfig: ToolsFilter = {};
-try {
-  const remoteConfigResponse = await fetch(`${base}tools-filter.json`);
-  if (remoteConfigResponse.ok) {
-    filterConfig = (await remoteConfigResponse.json()) as ToolsFilter;
-  }
-}
-catch {}
 
 export const useToolStore = defineStore('tools', () => {
   const favoriteToolsName = useITStorage('favoriteToolsName', []) as Ref<string[]>;
   const { t } = useI18n();
 
-  const makeRegExp = (regex: string | undefined) => regex ? new RegExp(regex, 'i') : null;
-  const filters = {
-    excludeCategoryFilterRegex: makeRegExp(filterConfig.excludeCategoryFilterRegex),
-    includeCategoryFilterRegex: makeRegExp(filterConfig.includeCategoryFilterRegex),
-    excludeToolsFilterRegex: makeRegExp(filterConfig.excludeToolsFilterRegex),
-    includeToolsFilterRegex: makeRegExp(filterConfig.includeToolsFilterRegex),
-  };
-
   const tools = computed<ToolWithCategory[]>(() => allTools
-    .filter((tool) => {
-      const category = tool.category || 'Development';
-      if (filters.includeToolsFilterRegex?.test(tool.path)) {
-        return true;
-      }
-      if (filters.includeCategoryFilterRegex?.test(category)) {
-        return true;
-      }
-      if (filters.excludeToolsFilterRegex?.test(tool.path)) {
-        return false;
-      }
-      if (filters.excludeCategoryFilterRegex?.test(category)) {
-        return false;
-      }
-      return true;
-    })
     .map((tool) => {
       const toolI18nKey = tool.path.replace(/\//g, '');
       const category = tool.category || 'Development';
