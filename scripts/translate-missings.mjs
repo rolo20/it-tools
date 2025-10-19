@@ -34,7 +34,8 @@ async function translateText(text, targetLang) {
       key: GOOGLE_TRANSLATE_API_KEY,
     },
   });
-  return response.data.data.translations[0].translatedText;
+  return response.data.data.translations[0].translatedText
+    .replace(/\{&#39;/, '{\'').replace(/&#39;\}/, '}\'');
 }
 
 function flattenYaml(obj, prefix = '') {
@@ -85,7 +86,7 @@ async function syncTranslations(englishFile, targetFiles, dryRun = false) {
     let langCharCount = 0;
 
     for (const [key, englishText] of Object.entries(englishFlat)) {
-      const needsTranslation = !targetFlat[key] || targetFlat[key] === englishText;
+      const needsTranslation = !targetFlat[key];
       if (needsTranslation) {
         if (dryRun) {
           langCharCount += englishText.length;
