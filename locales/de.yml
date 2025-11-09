@@ -3159,6 +3159,8 @@ tools:
       label-json-schema: "JSON-Schema:"
       placeholder-paste-your-json-schema-here: Fügen Sie hier Ihr JSON-Schema ein ...
       title-schema-validation-errors: Schemavalidierungsfehler
+      title-formatted-version: Formatierte Version
+      label-indent-size-0-compact: "Einrückungsgröße (0 = Kompakt):"
   json-size-analyzer:
     title: JSON-Größenanalysator
     description: Messen Sie die relativen Gewichte von JSON-Knoten

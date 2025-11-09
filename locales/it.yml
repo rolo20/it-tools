@@ -2928,6 +2928,8 @@ tools:
       label-json-schema: "Schema JSON:"
       placeholder-paste-your-json-schema-here: Incolla qui il tuo schema JSON...
       title-schema-validation-errors: Errori di convalida dello schema
+      title-formatted-version: Versione formattata
+      label-indent-size-0-compact: "Dimensione rientro (0 = Compatto):"
   json-size-analyzer:
     title: Analizzatore di dimensioni JSON
     description: Misura i pesi relativi dei nodi JSON

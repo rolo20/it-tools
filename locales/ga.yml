@@ -3200,6 +3200,8 @@ tools:
       label-json-schema: "Scéim JSON:"
       placeholder-paste-your-json-schema-here: Greamaigh do Scéim JSON anseo...
       title-schema-validation-errors: Earráidí Bailíochtaithe Scéime
+      title-formatted-version: Leagan formáidithe
+      label-indent-size-0-compact: "Méid an línithe (0 = Dlúth):"
   json-size-analyzer:
     title: Anailíseoir Méid Json
     description: Tomhas meáchain choibhneasta nóid JSON

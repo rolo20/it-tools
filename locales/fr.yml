@@ -3325,6 +3325,8 @@ tools:
       tag-validation-successful: Validation réussi !
       title-schema-validation-errors: Erreurs de validation du schéma
       title-the-following-errors-occured: Les erreurs suivantes se sont produites
+      title-formatted-version: Version formatée
+      label-indent-size-0-compact: "Taille du retrait (0 = Compact) :"
     title: Linter JSON
   json-merger:
     description: Fusionner profondément deux contenus JSON

@@ -2415,6 +2415,8 @@ tools:
       label-json-schema: "Schemat JSON:"
       placeholder-paste-your-json-schema-here: Wklej tutaj swój schemat JSON...
       title-schema-validation-errors: Błędy walidacji schematu
+      title-formatted-version: Wersja sformatowana
+      label-indent-size-0-compact: "Rozmiar wcięcia (0 = Kompaktowy):"
   json-size-analyzer:
     title: Analizator rozmiaru JSON
     description: Pomiar względnych wag węzłów JSON

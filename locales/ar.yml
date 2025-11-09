@@ -2923,6 +2923,8 @@ tools:
       label-json-schema: "مخطط JSON:"
       placeholder-paste-your-json-schema-here: قم بلصق مخطط JSON الخاص بك هنا...
       title-schema-validation-errors: أخطاء التحقق من صحة المخطط
+      title-formatted-version: النسخة المنسقة
+      label-indent-size-0-compact: "حجم المسافة البادئة (0 = مضغوط):"
   json-size-analyzer:
     title: محلل حجم JSON
     description: قياس الأوزان النسبية لعقد JSON

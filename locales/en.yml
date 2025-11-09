@@ -2345,6 +2345,8 @@ tools:
       label-json-schema: "JSON schema:"
       placeholder-paste-your-json-schema-here: Paste your JSON Schema here...
       title-schema-validation-errors: Schema Validation Errors
+      title-formatted-version: Formatted version
+      label-indent-size-0-compact: "Indent size (0 = Compact):"
   json-size-analyzer:
     title: Json Size Analyzer
     description: Measure JSON nodes relative weights

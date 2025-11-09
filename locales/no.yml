@@ -2936,6 +2936,8 @@ tools:
       label-json-schema: "JSON-skjema:"
       placeholder-paste-your-json-schema-here: Lim inn JSON-skjemaet ditt her ...
       title-schema-validation-errors: Skjemavalideringsfeil
+      title-formatted-version: Formatert versjon
+      label-indent-size-0-compact: "Innrykksstørrelse (0 = Kompakt):"
   json-size-analyzer:
     title: Json-størrelsesanalysator
     description: Mål relative vekter av JSON-noder

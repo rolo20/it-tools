@@ -2699,6 +2699,8 @@ tools:
       label-json-schema: "JSON 스키마:"
       placeholder-paste-your-json-schema-here: JSON 스키마를 여기에 붙여넣으세요...
       title-schema-validation-errors: 스키마 유효성 검사 오류
+      title-formatted-version: 포맷된 버전
+      label-indent-size-0-compact: "들여쓰기 크기(0 = 압축):"
   json-size-analyzer:
     title: JSON 크기 분석기
     description: JSON 노드의 상대적 가중치 측정

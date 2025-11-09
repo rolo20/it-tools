@@ -2270,6 +2270,8 @@ tools:
       label-json-schema: JSON 模式：
       placeholder-paste-your-json-schema-here: 将您的 JSON 模式粘贴到这里...
       title-schema-validation-errors: 架构验证错误
+      title-formatted-version: 格式化版本
+      label-indent-size-0-compact: 缩进大小（0 = 紧凑）：
   json-size-analyzer:
     title: JSON大小分析器
     description: 测量JSON节点的相对权重

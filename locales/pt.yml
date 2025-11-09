@@ -2401,6 +2401,8 @@ tools:
       label-json-schema: "Esquema JSON:"
       placeholder-paste-your-json-schema-here: Cole seu esquema JSON aqui...
       title-schema-validation-errors: Erros de validação de esquema
+      title-formatted-version: Versão formatada
+      label-indent-size-0-compact: "Tamanho do recuo (0 = Compacto):"
   json-size-analyzer:
     title: Analisador de tamanho JSON
     description: Medir pesos relativos de nós JSON

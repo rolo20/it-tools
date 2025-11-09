@@ -2895,6 +2895,8 @@ tools:
       label-json-schema: "JSON-schema:"
       placeholder-paste-your-json-schema-here: Plak hier uw JSON-schema...
       title-schema-validation-errors: Schemavalidatiefouten
+      title-formatted-version: Geformatteerde versie
+      label-indent-size-0-compact: "Inspringingsgrootte (0 = Compact):"
   json-size-analyzer:
     title: Json-grootte-analysator
     description: Meet de relatieve gewichten van JSON-knooppunten

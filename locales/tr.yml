@@ -2638,6 +2638,8 @@ tools:
       label-json-schema: "JSON şeması:"
       placeholder-paste-your-json-schema-here: JSON Şemanızı buraya yapıştırın...
       title-schema-validation-errors: Şema Doğrulama Hataları
+      title-formatted-version: Biçimlendirilmiş sürüm
+      label-indent-size-0-compact: "Girinti boyutu (0 = Sıkıştırılmış):"
   json-size-analyzer:
     title: Json Boyut Analizcisi
     description: JSON düğümlerinin göreceli ağırlıklarını ölçün

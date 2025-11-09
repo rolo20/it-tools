@@ -3237,6 +3237,8 @@ tools:
       label-json-schema: "Схема JSON:"
       placeholder-paste-your-json-schema-here: Вставте сюди свою JSON-схему...
       title-schema-validation-errors: Помилки перевірки схеми
+      title-formatted-version: Відформатована версія
+      label-indent-size-0-compact: "Розмір відступу (0 = Компактний):"
   json-size-analyzer:
     title: Аналізатор розміру JSON
     description: Вимірюйте відносну вагу вузлів JSON

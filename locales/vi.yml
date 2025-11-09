@@ -2930,6 +2930,8 @@ tools:
       label-json-schema: "Sơ đồ JSON:"
       placeholder-paste-your-json-schema-here: Dán Sơ đồ JSON của bạn vào đây...
       title-schema-validation-errors: Lỗi xác thực lược đồ
+      title-formatted-version: Phiên bản đã định dạng
+      label-indent-size-0-compact: "Kích thước thụt lề (0 = Nhỏ gọn):"
   json-size-analyzer:
     title: Trình phân tích kích thước JSON
     description: Đo trọng số tương đối của các nút JSON
