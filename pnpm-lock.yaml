@@ -656,6 +656,9 @@ importers:
       niceware:
         specifier: ^4.0.0
         version: 4.0.0
+      node-emv:
+        specifier: ^1.0.23
+        version: 1.0.23
       node-forge:
         specifier: ^1.3.1
         version: 1.3.1
@@ -8643,6 +8646,9 @@ packages:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
     deprecated: Use your platform's native DOMException instead
+
+  node-emv@1.0.23:
+    resolution: {integrity: sha512-mp4v4f9g7ZQ6+E/qlvIiomp4l8RmbJ0Sja67eJmsozmhfVF09wwtvNkm8FNANeo9HQsfBvnM6mY/tzzae++/KQ==}
 
   node-fetch-native@1.6.4:
     resolution: {integrity: sha512-IhOigYzAKHd244OC0JIMIUrjzctirCmPkaIfhDeGcEETWof5zKYUW7e7MYvChGWh/4CJeXEgsRyGzuF334rOOQ==}
@@ -20201,6 +20207,8 @@ snapshots:
   node-addon-api@8.3.0: {}
 
   node-domexception@1.0.0: {}
+
+  node-emv@1.0.23: {}
 
   node-fetch-native@1.6.4: {}
 
