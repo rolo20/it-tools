@@ -84,6 +84,7 @@ function unflattenYaml(flat) {
 async function syncTranslations(englishFile, targetFiles, dryRun = false) {
   const englishYaml = yaml.parse(await fs.readFile(englishFile, 'utf8'));
   const englishFlat = flattenYaml(englishYaml);
+  await fs.writeFile(englishFile, yaml.stringify(unflattenYaml(englishFlat)), 'utf8');
 
   let totalChars = 0;
 
