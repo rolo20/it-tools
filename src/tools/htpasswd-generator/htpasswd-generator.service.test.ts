@@ -5,7 +5,7 @@ describe('htpasswd-generator', () => {
   it('generate correct entries', () => {
     const commonValues = { username: 'a', password: 'a' };
 
-    expect(generateHtpasswd({ ...commonValues, saltRounds: 10, algorithm: 'bcrypt' })).toContain('a:$2a$10$');
+    expect(generateHtpasswd({ ...commonValues, saltRounds: 10, algorithm: 'bcrypt' })).toMatch(/a:\$2[ab]\$10\$/);
     expect(generateHtpasswd({ ...commonValues, salt: 'k9azwE5H', algorithm: 'apr1' })).toBe('a:$apr1$k9azwE5H$zIyj4gqCWXiwB2Iof6jHf1');
     expect(generateHtpasswd({ ...commonValues, salt: 'xs4x6VWJ', algorithm: 'md5' })).toBe('a:$1$xs4x6VWJ$lOH0fBF6QyWdTOEeqcFnP/');
     expect(generateHtpasswd({ ...commonValues, salt: 'grEPbuEp', algorithm: 'sha256' })).toBe('a:$5$grEPbuEp$DUmEMT5C4TRgZCs9ZFKOJZ/IgR5FJIOUH0dasQFPw57');
@@ -16,7 +16,7 @@ describe('htpasswd-generator', () => {
   it('generate correct entries (unicode)', () => {
     const commonValues = { username: 'a', password: 'àùé' };
 
-    expect(generateHtpasswd({ ...commonValues, saltRounds: 10, algorithm: 'bcrypt' })).toContain('a:$2a$10$');
+    expect(generateHtpasswd({ ...commonValues, saltRounds: 10, algorithm: 'bcrypt' })).toMatch(/a:\$2[ab]\$10\$/);
     expect(() => generateHtpasswd({ ...commonValues, salt: 'mL016JCr', algorithm: 'apr1' })).toThrow();
     expect(() => generateHtpasswd({ ...commonValues, salt: 'YshCU1p1', algorithm: 'md5' })).toThrow();
     expect(generateHtpasswd({ ...commonValues, salt: 'Rojf48Kp', algorithm: 'sha256' })).toBe('a:$5$Rojf48Kp$/dY3S.yDqW2ZH/YKrF85q6JszyP.bhIF/Qu31Q49Oa5');

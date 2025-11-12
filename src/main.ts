@@ -5,6 +5,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { LoadingPlugin } from 'vue-loading-overlay';
 
+import { installAbortSignalPolyfill } from 'abort-signal-polyfill';
+
 import { registerSW } from 'virtual:pwa-register';
 import shadow from 'vue-shadow-dom';
 import { hideSplashScreen } from 'vite-plugin-splash-screen/runtime';
@@ -26,6 +28,8 @@ window.addEventListener('vite:preloadError', (event: Event) => {
   event.preventDefault(); // Prevent the original error from being thrown again
   window.location.reload();
 });
+
+installAbortSignalPolyfill();
 
 // eslint-disable-next-line no-extend-native
 BigInt.prototype.toJSON = function () {
