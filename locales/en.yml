@@ -2505,6 +2505,14 @@ tools:
       label-public-key-jwk: 'Public Key (JWK):'
       label-private-key-jwk: 'Private Key (JWK):'
       title-generated-jwt-token: 'Generated JWT Token:'
+      label-secret-encoding: 'Secret Encoding:'
+      label-raw-text: Raw Text
+      label-hex-array: Hex Array
+      verify-description: '{0}: {1} (verify with {2})'
+      token-secret: Token Secret
+      token-keys: Token Keys
+      cannot-parse-secret-as-encoding: 'Cannot parse ''{0}'' as ''{1}'': {2}'
+      invalid-base64-string: Invalid Base64 string
   length-converter:
     title: Length Units Converter
     description: Convert values from length units

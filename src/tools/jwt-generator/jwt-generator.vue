@@ -3,6 +3,8 @@ import { useI18n } from 'vue-i18n';
 import * as jose from 'jose';
 import { type KeyLike } from 'jose';
 import JSON5 from 'json5';
+import hexArray from 'hex-array';
+import { Base64 } from 'js-base64';
 import { jwsAlgorithms } from './jwt-generator.constants';
 import { useValidation } from '@/composable/validation';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
@@ -20,6 +22,12 @@ const algInfo = computed(() => jwsAlgorithms.find(a => a.alg === alg.value) || {
 const isSecret = computed(() => algInfo.value.key === 'secret');
 
 const secret = ref('');
+const secretEncoding = ref<'text' | 'base64' | 'hex'>('text');
+const encodings = [
+  { label: t('tools.jwt-generator.texts.label-raw-text'), value: 'text' },
+  { label: t('tools.jwt-generator.texts.label-hex-array'), value: 'hex' },
+  { label: 'Base64', value: 'base64' },
+];
 
 const publicKeyPEM = ref('');
 const publicKeyJWK = ref('');
@@ -76,13 +84,32 @@ const header = computed(() => JSON.stringify({ alg: alg.value, typ: 'JWT' }, nul
 const encodedJWT = computedAsync(async () => {
   const isSecretValue = isSecret.value;
   const secretValue = secret.value;
+  const secretEncodingValue = secretEncoding.value;
   const privateKeyValue = privateKeyJWK.value;
   const algValue = alg.value;
   const payloadValue = payload.value;
   try {
     let privateKeyOrSecret;
     if (isSecretValue) {
-      privateKeyOrSecret = new TextEncoder().encode(secretValue);
+      try {
+        switch (secretEncodingValue) {
+          case 'text':
+            privateKeyOrSecret = new TextEncoder().encode(secretValue);
+            break;
+          case 'hex':
+            privateKeyOrSecret = hexArray.fromString(secretValue);
+            break;
+          case 'base64':
+            if (!Base64.isValid(secretValue)) {
+              throw new Error(t('tools.jwt-generator.texts.invalid-base64-string'));
+            }
+            privateKeyOrSecret = Base64.toUint8Array(secretValue);
+            break;
+        }
+      }
+      catch (parseError: any) {
+        throw new Error(t('tools.jwt-generator.texts.cannot-parse-secret-as-encoding', [secretValue, secretEncodingValue, parseError]));
+      }
     }
     else {
       privateKeyOrSecret = await jose.importJWK(JSON.parse(privateKeyValue), algValue);
@@ -119,7 +146,7 @@ const jsonInputValidation = useValidation({
       mb-2
     />
     <n-form-item :label="t('tools.jwt-generator.texts.label-description')" label-placement="left" mb-2>
-      {{ algInfo.alg }}: {{ algInfo.keyDesc }} (verify with {{ algInfo.verify }})
+      {{ t('tools.jwt-generator.texts.verify-description', [algInfo.alg, algInfo.keyDesc, algInfo.verify]) }}
     </n-form-item>
 
     <c-card :title="t('tools.jwt-generator.texts.title-token-content')" mb-2>
@@ -138,10 +165,18 @@ const jsonInputValidation = useValidation({
       />
     </c-card>
 
-    <c-card :title="isSecret ? 'Token Secret' : 'Token Keys'" mb-2>
-      <c-input-text v-if="isSecret" v-model:value="secret" />
-
-      <div v-if="!isSecret">
+    <c-card :title="isSecret ? t('tools.jwt-generator.texts.token-secret') : t('tools.jwt-generator.texts.token-keys')" mb-2>
+      <div v-if="isSecret">
+        <c-select
+          v-model:value="secretEncoding"
+          label-placement="left"
+          :label="t('tools.jwt-generator.texts.label-secret-encoding')"
+          :options="encodings"
+          mb-2
+        />
+        <c-input-text v-model:value="secret" />
+      </div>
+      <div v-else>
         <n-form-item :label="t('tools.jwt-generator.texts.label-public-key-pem')">
           <c-input-text
             v-model:value="publicKeyPEM"
