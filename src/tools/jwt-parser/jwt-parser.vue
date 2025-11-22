@@ -2,6 +2,8 @@
 import { useI18n } from 'vue-i18n';
 import * as jose from 'jose';
 import JSON5 from 'json5';
+import hexArray from 'hex-array';
+import { Base64 } from 'js-base64';
 import { decodeJwt, getJwtAlgorithm } from './jwt-parser.service';
 import { useValidation } from '@/composable/validation';
 import { isNotThrowing } from '@/utils/boolean';
@@ -33,6 +35,14 @@ const validation = useValidation({
 });
 
 const secretOrPublicKey = ref('');
+const secretEncoding = ref<'text' | 'base64' | 'hex' | 'key' | 'jwk'>('text');
+const encodings = [
+  { label: t('tools.jwt-parser.texts.label-jwk'), value: 'jwk' },
+  { label: t('tools.jwt-parser.texts.label-pub-key'), value: 'key' },
+  { label: t('tools.jwt-parser.texts.label-secret-raw-text'), value: 'text' },
+  { label: t('tools.jwt-parser.texts.label-secret-hex-array'), value: 'hex' },
+  { label: t('tools.jwt-parser.texts.label-secret-base64'), value: 'base64' },
+];
 const signatureVerification = computedAsync(async () => {
   const secretOrPublicKeyValue = secretOrPublicKey.value?.trim();
   if (!secretOrPublicKeyValue) {
@@ -45,25 +55,44 @@ const signatureVerification = computedAsync(async () => {
   try {
     const alg = getJwtAlgorithm({ jwt }) || 'unk';
 
-    if (secretOrPublicKeyValue.startsWith('{')) {
+    if (secretEncoding.value === 'jwk' || secretOrPublicKeyValue.startsWith('{')) {
       const jwk = JSON5.parse(secretOrPublicKeyValue);
       const publicKey = await jose.importJWK(jwk, alg);
 
       await jose.jwtVerify(jwt, publicKey);
     }
-    else if (secretOrPublicKeyValue.includes('-----BEGIN PUBLIC KEY-----')) {
+    else if (secretEncoding.value === 'key' || secretOrPublicKeyValue.includes('-----BEGIN PUBLIC KEY-----')) {
       const publicKey = await jose.importSPKI(secretOrPublicKeyValue, alg);
       await jose.jwtVerify(jwt, publicKey);
     }
     else {
-      const secret = new TextEncoder().encode(secretOrPublicKeyValue);
+      let secret;
+      try {
+        switch (secretEncoding.value) {
+          case 'text':
+            secret = new TextEncoder().encode(secretOrPublicKeyValue);
+            break;
+          case 'hex':
+            secret = hexArray.fromString(secretOrPublicKeyValue);
+            break;
+          case 'base64':
+            if (!Base64.isValid(secretOrPublicKeyValue)) {
+              throw new Error(t('tools.jwt-generator.texts.invalid-base64-string'));
+            }
+            secret = Base64.toUint8Array(secretOrPublicKeyValue);
+            break;
+        }
+      }
+      catch (parseError: any) {
+        throw new Error(t('tools.jwt-generator.texts.cannot-parse-secret-as-encoding', [secretOrPublicKeyValue, secretEncoding.value, parseError]));
+      }
       await jose.jwtVerify(jwt, secret);
     }
 
     return { error: '' };
   }
   catch (e: any) {
-    return { error: `Key or secret or verification error: ${e.toString()}` };
+    return { error: t('tools.jwt-parser.texts.key-or-secret-or-verification-error-e-tostring', [e.toString()]) };
   }
 });
 </script>
@@ -99,6 +128,13 @@ const signatureVerification = computedAsync(async () => {
     </n-table>
 
     <c-card :title="t('tools.jwt-parser.texts.title-signature-validation')">
+      <c-select
+        v-model:value="secretEncoding"
+        label-placement="left"
+        :label="t('tools.jwt-parser.texts.label-secret-encoding')"
+        :options="encodings"
+        mb-2
+      />
       <c-input-text
         v-model:value="secretOrPublicKey" :label="t('tools.jwt-parser.texts.label-secret-or-public-key-spki-or-jwk')"
         :placeholder="t('tools.jwt-parser.texts.placeholder-put-your-secret-or-public-key-here')" rows="5" multiline raw-text autofocus mb-3

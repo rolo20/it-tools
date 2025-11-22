@@ -5312,6 +5312,13 @@ tools:
       label-secret-or-public-key-spki-or-jwk: Secret or Public Key (SPKI or JWK)
       placeholder-put-your-secret-or-public-key-here: Put your secret or Public key here...
       tag-signature-verified: Signature verified
+      label-jwk: JWK Key
+      label-pub-key: PEM Public Key
+      label-secret-raw-text: Secret - Raw Text
+      label-secret-hex-array: Secret - Hex Array
+      label-secret-base64: Secret - Base64
+      label-secret-encoding: 'Secret Encoding/Type:'
+      key-or-secret-or-verification-error-e-tostring: 'Key or secret or verification error: {0}'
     constants:
       text:
         token-introspection-response: Token introspection response
