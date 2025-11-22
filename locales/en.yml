@@ -7122,3 +7122,15 @@ tools:
       label-converted-to-hex-array: 'Converted to Hex array:'
       tag-digit-0-no-grouping: (Digit 0 = No grouping)
       tag-digit-0-no-row: (Digit 0 = No row)
+  toon-to-json:
+    texts:
+      message-provided-json-is-not-valid: Provided TOON is not valid
+      output-label-json-version: 'JSON version of your TOON content:'
+      input-placeholder-paste-your-raw-toon-here: Paste your raw TOON content here...
+      input-label-your-raw-toon: 'Your raw TOON content:'
+  json-to-toon:
+    texts:
+      message-provided-json-is-not-valid: Provided JSON is not valid.
+      input-placeholder-paste-your-raw-json-here: Paste your raw JSON here...
+      input-label-your-raw-json: 'Your raw JSON:'
+      output-label-toon-version-of-your-json: 'TOON version of your JSON:'
