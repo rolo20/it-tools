@@ -43,7 +43,7 @@ async function onUpload(file: File) {
   }
 }
 
-watch(torrentContent, (_, newValue) => {
+watch(torrentContent, (newValue) => {
   if (newValue !== '') {
     fileInput.value = null;
   }

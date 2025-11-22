@@ -37,7 +37,7 @@ async function onUpload(file: File) {
   }
 }
 
-watch(svgContent, (_, newValue) => {
+watch(svgContent, (newValue) => {
   if (newValue !== '') {
     fileInput.value = null;
   }

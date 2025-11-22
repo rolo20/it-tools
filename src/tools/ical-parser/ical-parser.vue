@@ -34,7 +34,7 @@ async function onUpload(file: File) {
   }
 }
 
-watch(icalContent, (_, newValue) => {
+watch(icalContent, (newValue) => {
   if (newValue !== '') {
     fileInput.value = null;
   }
