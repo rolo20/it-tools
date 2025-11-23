@@ -5,7 +5,10 @@ import { type KeyLike } from 'jose';
 import JSON5 from 'json5';
 import hexArray from 'hex-array';
 import { Base64 } from 'js-base64';
+import { type JwtPayload, jwtDecode } from 'jwt-decode';
+import { getJwtAlgorithm } from '../jwt-parser/jwt-parser.service';
 import { jwsAlgorithms } from './jwt-generator.constants';
+
 import { useValidation } from '@/composable/validation';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
 
@@ -20,6 +23,19 @@ const payload = ref(`{
 const alg = useQueryParamOrStorage({ name: 'alg', storageName: 'jwt-gen:alg', defaultValue: 'HS512' });
 const algInfo = computed(() => jwsAlgorithms.find(a => a.alg === alg.value) || { alg: 'UNK', keyDesc: '', key: 'secret', verify: '' });
 const isSecret = computed(() => algInfo.value.key === 'secret');
+
+const inputToken = ref('');
+const inputTokenError = ref('');
+watch(inputToken, (value) => {
+  inputTokenError.value = '';
+  try {
+    payload.value = JSON.stringify(jwtDecode<JwtPayload>(value), null, 2);
+    alg.value = getJwtAlgorithm({ jwt: value }) || 'HS512';
+  }
+  catch (e: any) {
+    inputTokenError.value = e.toString();
+  }
+});
 
 const secret = ref('');
 const secretEncoding = ref<'text' | 'base64' | 'hex'>('text');
@@ -139,6 +155,21 @@ const jsonInputValidation = useValidation({
 
 <template>
   <div>
+    <c-card mb-3>
+      <details>
+        <summary>
+          {{ t('tools.jwt-generator.texts.click-to-input-a-existing-jwt-token-to-modify') }}
+        </summary>
+        <c-input-text
+          v-model:value="inputToken"
+          :placeholder="t('tools.jwt-generator.texts.placeholder-input-token')"
+        />
+        <c-alert v-if="inputTokenError">
+          {{ inputTokenError }}
+        </c-alert>
+      </details>
+    </c-card>
+
     <c-select
       v-model:value="alg"
       :options="jwsAlgorithms.map(a => ({ value: a.alg, label: `${a.alg}: ${a.verify}` }))"

@@ -2513,6 +2513,8 @@ tools:
       token-keys: Token Keys
       cannot-parse-secret-as-encoding: 'Cannot parse ''{0}'' as ''{1}'': {2}'
       invalid-base64-string: Invalid Base64 string
+      placeholder-input-token: Paste your JWT token to edit...
+      click-to-input-a-existing-jwt-token-to-modify: Click to input a existing JWT token to modify
   length-converter:
     title: Length Units Converter
     description: Convert values from length units
