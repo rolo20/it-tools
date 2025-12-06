@@ -2407,6 +2407,8 @@ tools:
       title-schema-validation-errors: Schema Validation Errors
       title-formatted-version: Formatted version
       label-indent-size-0-compact: 'Indent size (0 = Compact):'
+      title-repaired-version: Auto Repaired and Formatted version
+      label-auto-repair-json: 'Auto Repair JSON:'
   json-size-analyzer:
     title: Json Size Analyzer
     description: Measure JSON nodes relative weights
