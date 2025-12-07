@@ -5,6 +5,7 @@ import type { HeadObject } from '@vueuse/head';
 import VueMarkdown from 'vue-markdown-render';
 
 import { useThemeVars } from 'naive-ui';
+import { useTheme } from '../ui/c-link/c-link.theme';
 import BaseLayout from './base.layout.vue';
 import FavoriteButton from '@/components/FavoriteButton.vue';
 import type { Tool } from '@/tools/tools.types';
@@ -71,6 +72,8 @@ const toolFooter = computed<string>(() => {
   return ((npmPackages.length > 0 ? t('tools.tool.layout.text.made-with-npmpackages-join-n', [npmPackages.join(', ')]) : '') + footer).trim();
 });
 const themeVars = useThemeVars();
+
+const linkTheme = useTheme();
 </script>
 
 <template>
@@ -166,4 +169,30 @@ const themeVars = useThemeVars();
       font-style: italic;
     }
   }
+::v-deep(.external-tool) a {
+  line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 400;
+  color: v-bind('linkTheme.default.textColor');
+  border-radius: 4px;
+  transition: color cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+
+  outline-offset: 1px;
+
+  &:hover {
+    color: v-bind('linkTheme.default.hover.textColor');
+  }
+
+  &:active {
+    color: v-bind('linkTheme.default.textColor');
+  }
+
+  &:focus {
+    color: v-bind('linkTheme.default.outline.color');
+  }
+}
 </style>

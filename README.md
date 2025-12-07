@@ -102,6 +102,33 @@ Category matches on category (English) names ; Tools matches on tools path/url.
 
 See (docker-tools-filter-and-home-content)[https://github.com/sharevb/it-tools]
 
+## Add custom external tools
+
+You can add custom external tools (href or markdownContent) by mounting a `external-tools.json` in `/usr/share/nginx/html` with the following structure:
+
+```json
+[
+  {
+    "name": "GitHub",
+    "path": "/github",
+    "description": "Link to Github",
+    "keywords": ["github"],
+    "category": "Links",
+    "href": "https://github.com"
+  },
+  {
+    "name": "Some text",
+    "path": "/some-text",
+    "description": "Some description",
+    "keywords": ["some"],
+    "category": "Links",
+    "markdownContent": "Some useful **text**\n\nin *markdown*"
+  }
+]
+```
+
+See (docker-tools-filter-and-home-content)[https://github.com/sharevb/it-tools]
+
 ## Setting default tools parameters / default UI language at runtime
 
 You can set default tool parameters by mounting a `tools-setting.json` in `/usr/share/nginx/html`.

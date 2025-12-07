@@ -7147,3 +7147,4 @@ tools:
       input-placeholder-paste-your-raw-json-here: Paste your raw JSON here...
       input-label-your-raw-json: 'Your raw JSON:'
       output-label-toon-version-of-your-json: 'TOON version of your JSON:'
+  external-link-goto: 'To open this tool, follow this link: '

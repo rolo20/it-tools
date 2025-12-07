@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./tools-filter.json:/usr/share/nginx/html/tools-filter.json
+      - ./external-tools.json:/usr/share/nginx/html/external-tools.json
       - ./home.custom.md:/usr/share/nginx/html/home.custom.md
     ports:
       - 8080:8080

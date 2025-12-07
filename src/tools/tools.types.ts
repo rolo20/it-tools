@@ -15,6 +15,20 @@ export interface Tool {
   category: string
 }
 
+export interface ExternalTool {
+  name: string
+  path: string
+  description?: string
+  keywords?: string[]
+  icon?: Component
+  redirectFrom?: string[]
+  isNew: boolean
+  createdAt?: Date
+  category: string
+  markdownContent?: string
+  href?: string
+}
+
 export interface ToolCategory {
   name: string
   components: Tool[]
