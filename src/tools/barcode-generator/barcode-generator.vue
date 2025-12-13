@@ -59,72 +59,74 @@ const barcodeSVG = computed(() => {
 
 const { download: downloadPNG } = useDownloadFileFromBase64({ source: barcodePNG, filename: 'barcode.png' });
 const { download: downloadSVG } = useDownloadFileFromBase64({ source: barcodeSVG, filename: 'barcode.svg' });
+
+const barcodeFormats = formats as { value: string; label: string }[];
 </script>
 
 <template>
-  <c-card>
-    <n-grid x-gap="12" y-gap="12" cols="1 600:3">
-      <n-gi span="2">
-        <c-input-text
-          v-model:value="value"
-          label-position="left"
-          label-width="130px"
-          label-align="right"
-          :label="t('tools.barcode-generator.texts.label-text')"
-          multiline
-          rows="1"
-          autosize
-          :placeholder="t('tools.barcode-generator.texts.placeholder-your-barcode')"
-          mb-6
-        />
-        <n-form label-width="130" label-placement="left">
-          <c-select
-            v-model:value="format"
-            :label="t('tools.barcode-generator.texts.label-format')"
-            label-position="left"
-            label-width="130px"
-            label-align="right"
-            :options="formats"
-            searchable
-            mb-4
-          />
+  <div>
+    <c-input-text
+      v-model:value="value"
+      label-position="left"
+      label-width="130px"
+      label-align="right"
+      :label="t('tools.barcode-generator.texts.label-text')"
+      multiline
+      rows="1"
+      autosize
+      :placeholder="t('tools.barcode-generator.texts.placeholder-your-barcode')"
+      mb-6
+    />
+    <n-form label-width="130" label-placement="left">
+      <c-select
+        v-model:value="format"
+        :label="t('tools.barcode-generator.texts.label-format')"
+        label-position="left"
+        label-width="130px"
+        label-align="right"
+        :options="barcodeFormats"
+        searchable
+        mb-4
+      />
 
-          <n-form-item :label="t('tools.barcode-generator.texts.label-foreground-color')">
-            <n-color-picker v-model:value="foreground" :modes="['hex']" :show-alpha="false" />
-          </n-form-item>
-          <n-form-item :label="t('tools.barcode-generator.texts.label-background-color')">
-            <n-color-picker v-model:value="background" :modes="['hex']" :show-alpha="false" />
-          </n-form-item>
-          <n-form-item :label="t('tools.barcode-generator.texts.label-scale')">
-            <n-input-number-i18n v-model:value="scale" :min="0" />
-          </n-form-item>
-          <n-form-item :label="t('tools.barcode-generator.texts.label-height-mm')">
-            <n-input-number-i18n v-model:value="height" :min="0" />
-          </n-form-item>
-          <n-form-item :label="t('tools.barcode-generator.texts.label-margin')">
-            <n-input-number-i18n v-model:value="margin" :min="0" />
-          </n-form-item>
-          <n-form-item :label="t('tools.barcode-generator.texts.label-display-text')">
-            <n-checkbox v-model:checked="displayValue" />
-          </n-form-item>
-        </n-form>
-      </n-gi>
-      <n-gi>
-        <div flex flex-col items-center gap-3>
-          <c-alert v-if="error">
-            {{ error }}
-          </c-alert>
-          <canvas ref="barcodeCanvas" />
-          <div flex justify-center>
-            <c-button mr-2 @click="downloadPNG">
-              {{ t('tools.barcode-generator.texts.tag-download-png-barcode') }}
-            </c-button>
-            <c-button @click="downloadSVG">
-              {{ t('tools.barcode-generator.texts.tag-download-svg-barcode') }}
-            </c-button>
-          </div>
-        </div>
-      </n-gi>
-    </n-grid>
-  </c-card>
+      <n-form-item :label="t('tools.barcode-generator.texts.label-foreground-color')">
+        <n-color-picker v-model:value="foreground" :modes="['hex']" :show-alpha="false" />
+      </n-form-item>
+      <n-form-item :label="t('tools.barcode-generator.texts.label-background-color')">
+        <n-color-picker v-model:value="background" :modes="['hex']" :show-alpha="false" />
+      </n-form-item>
+      <n-space justify="center">
+        <n-form-item :label="t('tools.barcode-generator.texts.label-scale')">
+          <n-input-number-i18n v-model:value="scale" :min="0" />
+        </n-form-item>
+        <n-form-item :label="t('tools.barcode-generator.texts.label-height-mm')">
+          <n-input-number-i18n v-model:value="height" :min="0" />
+        </n-form-item>
+        <n-form-item :label="t('tools.barcode-generator.texts.label-margin')">
+          <n-input-number-i18n v-model:value="margin" :min="0" />
+        </n-form-item>
+        <n-form-item :label="t('tools.barcode-generator.texts.label-display-text')">
+          <n-checkbox v-model:checked="displayValue" />
+        </n-form-item>
+      </n-space>
+    </n-form>
+
+    <div v-if="error" mb-1 flex justify-center>
+      <c-alert>
+        {{ error }}
+      </c-alert>
+    </div>
+
+    <div mb-1 flex justify-center>
+      <canvas ref="barcodeCanvas" />
+    </div>
+    <div mb-1 flex justify-center>
+      <c-button mr-2 @click="downloadPNG">
+        {{ t('tools.barcode-generator.texts.tag-download-png-barcode') }}
+      </c-button>
+      <c-button @click="downloadSVG">
+        {{ t('tools.barcode-generator.texts.tag-download-svg-barcode') }}
+      </c-button>
+    </div>
+  </div>
 </template>
