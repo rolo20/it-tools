@@ -22,6 +22,10 @@ export function useJsonSchemaValidation({ json, schemaUrl, schemaData }: { json:
   });
 
   watch([schemaUrl, schemaData].filter(isRef), async () => {
+    if (get(schemaUrl) === '') {
+      schema.value = null;
+      errors.value = [];
+    }
     if (get(schemaUrl) === 'custom') {
       try {
         schema.value = JSON.parse(get(schemaData)) as Schema;
