@@ -307,6 +307,14 @@ pnpm test
 pnpm lint
 ```
 
+### Ensure CI (lock, eslint, typecheck) will succeed
+
+Before submitting a PR, run:
+
+```sh
+pnpm install --ignore-scripts && pnpm lint --fix && pnpm typecheck
+```
+
 ### Create a new tool
 
 To create a new tool, there is a script that generate the boilerplate of the new tool, simply run:
