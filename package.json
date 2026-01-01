@@ -140,6 +140,7 @@
     "date-fns": "^4.0.0",
     "date-fns-tz": "^3.2.0",
     "date-holidays": "^3.23.21",
+    "decimal.js": "^10.6.0",
     "decomposerize": "^1.4.4",
     "detect-csv": "^1.1.0",
     "diceware-generator": "^3.0.1",
