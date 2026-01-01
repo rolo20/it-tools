@@ -7506,3 +7506,6 @@ tools:
       tag-link: Link
       tag-status: Status
       tag-open-url: Open Url
+  copy:
+    text:
+      copied-to-the-clipboard: Copied to the clipboard

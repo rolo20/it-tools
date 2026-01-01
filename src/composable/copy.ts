@@ -2,8 +2,9 @@
 import { useClipboard, useClipboardItems } from '@vueuse/core';
 import { useMessage } from 'naive-ui';
 import type { MaybeRefOrGetter } from 'vue';
+import { translate as t } from '@/plugins/i18n.plugin';
 
-export function useCopy({ source, text = 'Copied to the clipboard', createToast = true }: { source?: MaybeRefOrGetter<string>; text?: string; createToast?: boolean } = {}) {
+export function useCopy({ source, text = t('tools.copy.text.copied-to-the-clipboard'), createToast = true }: { source?: MaybeRefOrGetter<string>; text?: string; createToast?: boolean } = {}) {
   const { copy, copied, ...rest } = useClipboard({
     source,
     legacy: true,
@@ -29,7 +30,7 @@ export function useCopy({ source, text = 'Copied to the clipboard', createToast 
   };
 }
 
-export function useCopyClipboardItems({ source, text = 'Copied to the clipboard', createToast = true }: { source?: MaybeRefOrGetter<Array<{ mime: string; content: string }>>; text?: string; createToast?: boolean } = {}) {
+export function useCopyClipboardItems({ source, text = t('tools.copy.text.copied-to-the-clipboard'), createToast = true }: { source?: MaybeRefOrGetter<Array<{ mime: string; content: string }>>; text?: string; createToast?: boolean } = {}) {
   function toClipboardItem(item: { mime: string; content: string }) {
     return new ClipboardItem({
       [item.mime]: new Blob([item.content], { type: item.mime }),
@@ -60,7 +61,7 @@ export function useCopyClipboardItems({ source, text = 'Copied to the clipboard'
   };
 }
 
-export function useCopyHtml({ sourceHtml, fallbackText, toastText = 'Copied to the clipboard', createToast = true }: { sourceHtml?: MaybeRefOrGetter<string>; fallbackText?: MaybeRefOrGetter<string>; toastText?: string; createToast?: boolean } = {}) {
+export function useCopyHtml({ sourceHtml, fallbackText, toastText = t('tools.copy.text.copied-to-the-clipboard'), createToast = true }: { sourceHtml?: MaybeRefOrGetter<string>; fallbackText?: MaybeRefOrGetter<string>; toastText?: string; createToast?: boolean } = {}) {
   const message = useMessage();
 
   const copied = ref(false);
