@@ -1,10 +1,11 @@
 import { BrandHtml5 } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'HTML to XHTML',
+  name: t('tools.html-to-xhtml.title'),
   path: '/html-to-xhtml',
-  description: 'Convert HTML to strict XHTML (XML parsable, self closing tags...)',
+  description: t('tools.html-to-xhtml.description'),
   keywords: ['html', 'xhtml'],
   component: () => import('./html-to-xhtml.vue'),
   icon: BrandHtml5,

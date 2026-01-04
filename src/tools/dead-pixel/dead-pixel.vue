@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { nextTick, onMounted, onUnmounted, ref } from 'vue';
+
+const { t } = useI18n();
 
 const showIframe = ref(false);
 const iframeRef = ref<HTMLIFrameElement | null>(null);
@@ -101,20 +104,19 @@ const iframeHTML = `
 <template>
   <div class="flex flex-col">
     <p>
-      Keyboard shortcuts:
-      <ul>
-        <li><strong>Arrow Right, Arrow Down, Space</strong>: Next color</li>
-        <li><strong>Arrow Left, Arrow Up</strong>: Previous color</li>
-        <li><strong>ESC</strong>: Exit Dead Pixel Mode</li>
+      {{ t('tools.dead-pixel.texts.tag-keyboard-shortcuts') }}<ul>
+        <li><strong>{{ t('tools.dead-pixel.texts.tag-arrow-right-arrow-down-space') }}</strong>{{ t('tools.dead-pixel.texts.tag-next-color') }}</li>
+        <li><strong>{{ t('tools.dead-pixel.texts.tag-arrow-left-arrow-up') }}</strong>{{ t('tools.dead-pixel.texts.tag-previous-color') }}</li>
+        <li><strong>{{ t('tools.dead-pixel.texts.tag-esc') }}</strong>{{ t('tools.dead-pixel.texts.tag-exit-dead-pixel-mode') }}</li>
       </ul>
     </p>
     <c-button v-if="!showIframe" class="mx-auto" @click="startDeadPixel">
-      Start Dead Pixel
+      {{ t('tools.dead-pixel.texts.tag-start-dead-pixel') }}
     </c-button>
   </div>
 
   <iframe
-    v-if="showIframe" ref="iframeRef" title="dead-pixel-iframe" class="dead-pixel-iframe" :srcdoc="iframeHTML"
+    v-if="showIframe" ref="iframeRef" :title="t('tools.dead-pixel.texts.title-dead-pixel-iframe')" class="dead-pixel-iframe" :srcdoc="iframeHTML"
     allow="fullscreen"
   />
 </template>

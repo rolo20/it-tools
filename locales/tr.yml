@@ -834,6 +834,9 @@ tools:
       placeholder-your-string: Senin ipin...
       label-cleaning-regex: "Regex'i temizleme:"
       placeholder-your-cleaning-regex: Temizleme regex'iniz...
+      label-titlecase: "Başlık büyük harfle yazılıyor:"
+      label-spongecase: "Sünger kılıf:"
+      label-swapcase: "Takas kutusu:"
   html-entities:
     title: HTML varlıklarından kaçış
     description: HTML öğelerinden kaçış veya kaçışı kaldırma (<,>, &, " ve \' gibi
@@ -981,6 +984,7 @@ tools:
       tag-hey: Hey!
       tag-welcome-to-this-html-wysiwyg-editor: Bu HTML wysiwyg düzenleyicisine hoş geldiniz
       tag-click-here-to-paste-or-edit-raw-html: Ham HTML'yi yapıştırmak veya düzenlemek için buraya tıklayın
+      label-xhtmlfy: "XHTML:"
   yaml-to-toml:
     title: YAML'den TOML'ye
     description: YAML'yi ayrıştırın ve TOML'ye dönüştürün.
@@ -1612,6 +1616,7 @@ tools:
       tag-: "', '"
       tag-copy-html-formatted: HTML Biçimli Kopyala
       tag-copy-code-text: Kod Metnini Kopyala
+      tag-copy-html-word: Word'de HTML/Zengin Metin Olarak Kopyala
   coin-flipper:
     title: Madeni Para Atma Makinesi
     description: Bir madeni parayı çevirin
@@ -2627,6 +2632,15 @@ tools:
     texts:
       label-current-selected-node-jsonpath: "Şu anda seçili olan Düğüm JSONPath:"
       label-your-edited-json: "Düzenlediğiniz JSON:"
+      title-the-following-errors-occured: Aşağıdaki hatalar oluştu.
+      tag-validation-successful: Doğrulama başarılı!
+      label-no-validation: Doğrulama yok
+      label-custom: Gelenek
+      label-json-schema: "JSON şeması:"
+      placeholder-paste-your-json-schema-here: JSON şemanızı buraya yapıştırın...
+      title-schema-validation-errors: Şema Doğrulama Hataları
+      label-indent-size-0-compact: "Girinti boyutu (0 = Kompakt):"
+      repair-json: JSON'u onar
   json-escaper:
     title: Json Kaçış/Kaçış Kaldırıcı
     description: JSON dizesinden kaçış ve kaçışı kaldırma
@@ -4678,6 +4692,8 @@ tools:
       message-this-date-is-invalid-for-this-format: Bu tarih bu format için geçersizdir
       placeholder-put-your-date-string-here: Tarih dizinizi buraya yazın...
       placeholder-invalid-date: Geçersiz tarih...
+      button-add-timezone: Saat dilimi ekle
+      placeholder-select-timezone: Bir saat dilimi seçin...
   extract-text-from-html:
     texts:
       message-provided-html-is-not-valid: Sağlanan HTML geçerli değil.
@@ -5665,6 +5681,8 @@ tools:
       label-merged-ical: Birleştirilmiş ICAL
       tag-delete: Silmek
       tag-merge-ical-files: iCal dosyalarını birleştir
+      file-to-merge-file-name: "Birleştirilecek dosya: {0}"
+      download-merged-ical: Birleştirilmiş iCal'ı indirin
     service:
       text:
         no-icals-parsed-successfully: Hiçbir ical başarıyla ayrıştırılamadı
@@ -5726,6 +5744,12 @@ tools:
       heading-1: Başlık 1
       inline-code: Satır içi kod
       strike: Çarpmak
+      heading-5: Başlık 5
+      text-left: Sola Hizala
+      text-center: Hizala Merkez
+      text-right: Sağa Hizala
+      text-justify: Hizala Yasla
+      clear-align: Net Hizalama
   unicode-formatter:
     title: Unicode Biçimlendirici
     description: Unicode yazı tiplerini kullanarak metni biçimlendirin
@@ -5926,6 +5950,7 @@ tools:
       label-json-schema: "JSON şeması:"
       placeholder-paste-your-json-schema-here: JSON Şemanızı buraya yapıştırın...
       title-schema-validation-errors: Şema Doğrulama Hataları
+      label-unescape-json-string: "JSON dizesini kod çözme işlemi:"
     text:
       provided-json-is-not-valid: JSON geçerli değilse.
       try-again-with-repairjsonlabel: '"{0}" ile tekrar deneyin'
@@ -7234,6 +7259,7 @@ tools:
       label-signature: İmza
       label-arguments: Argümanlar
       title-structured-output-json: Yapılandırılmış Çıktı JSON
+      placeholder-quot-to-quot-quot-0x-quot-quot-data-quot-quot-0x-quot-or-raw-0x: "{'{'}\"to\":\"0x...\",\"data\":\"0x...\"{'}'} veya ham 0x...."
   file-splitter:
     title: Dosya Bölücü
     description: JSON, XML veya metin dosyasını düğüm gruplarına veya satır
@@ -7427,6 +7453,190 @@ tools:
       tag-link: Bağlantı
       tag-status: Durum
       tag-open-url: Açık URL
+  amortization-calculator:
+    title: Amortisman Hesaplayıcısı
+    description: Aylık ödeme dökümleriyle kredi geri ödeme planlarını hesaplayın.
+    footer: Amortisman Hesaplayıcısı
+    texts:
+      title-loan-parameters: Kredi Parametreleri
+      title-overview: Genel Bakış
+      title-amortization-schedule: Amortisman Tablosu
+      label-loan-amount: Kredi Miktarı
+      label-loan-term: Kredi Vadesi
+      label-interest-rate: Faiz Oranı
+      label-displayed-currency: Görüntülenen Para Birimi
+      label-end-of-year: Yıl Sonu {year}
+      label-year: Yıl
+      label-month: Ay
+      label-interest: Faiz
+      label-principal: Müdür
+      label-ending-balance: Kapanış Bakiyesi
+      label-monthly-payment: Aylık Ödeme
+      label-total-of-payments: Ödemelerin Toplamı
+      label-total-interest: Toplam Faiz
+      message-loan-amount-must-be-positive: Kredi tutarı pozitif bir değer olmalıdır.
+      message-loan-term-must-be-positive-integer: Kredi vadesi pozitif bir tamsayı olmalıdır.
+      message-interest-rate-must-be-between-1-and-100: Faiz oranı 0 ile 100 arasında pozitif bir değer olmalıdır.
+  copy:
+    text:
+      copied-to-the-clipboard: Panoya kopyalandı
+  arpa-decoder:
+    title: ARPA Kod Çözücü
+    description: IPv4/6 ARPA adreslerini veya PTR kaydını çözümleyin.
+    texts:
+      label-arpa-address: "ARPA Adresi:"
+      placeholder-e-g-10-1-168-192-in-addr-arpa-or-xxxx-ip6-arpa: Örneğin, 10.1.168.192.in-addr.arpa veya xxxx.ip6.arpa.
+  database-builder:
+    title: Veritabanı Oluşturma Aracı
+    description: Çeşitli veritabanları için SQL CREATE DATABASE sorguları oluşturun.
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sql-server: SQL Server
+      label-oracle: Oracle
+      label-sqlite: SQLite
+      label-database-type: "Veritabanı Türü:"
+      label-database-name: "Veritabanı Adı:"
+      placeholder-test: test
+      label-server-address: "Sunucu Adresi:"
+      placeholder-127-0-0-1: 127.0.0.1
+      label-account: "Hesap:"
+      label-password-leave-empty-to-generate: "Parola (oluşturmak için boş bırakın):"
+      placeholder-leave-empty-for-random: rastgele seçim için boş bırakın
+      label-permissions-all-privileges-if-none-selected: "İzinler (hiçbiri seçilmediyse TÜM AYRICALIKLAR):"
+      title-generated-sql-instructions: "Oluşturulan SQL Talimatları:"
+      tag-select: SEÇME
+      tag-insert: SOKMAK
+      tag-update: GÜNCELLEME
+      tag-delete: SİLMEK
+      tag-create: YARATMAK
+      tag-drop: DÜŞÜRMEK
+      tag-alter: DEĞİŞTİR
+      tag-index: DİZİN
+      tag-execute: UYGULAMAK
+      tag-references: KAYNAKLAR
+      tag-trigger: TETİKLEMEK
+      tag-usage: KULLANIM
+      tag-replication-client: ÇOĞALTMA İSTEMCİSİ
+      tag-replication-slave: ÇOĞALTMA KÖLESİ
+      tag-generate-sql-instructions: SQL Talimatları Oluştur
+  database-table-generator:
+    title: Veritabanı Tablosu Oluşturucu
+    description: Yaygın veritabanları için SQL CREATE TABLE sorgusu oluşturun.
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sqlite: SQLite
+      label-sql-server: SQL Server
+      label-database-type: "Veritabanı Türü:"
+      label-database-name: "Veritabanı Adı:"
+      placeholder-enter-database-name: Veritabanı adını girin
+      placeholder-table-name: Tablo adı
+      placeholder-column-name: Sütun adı
+      placeholder-default-value: Varsayılan değer
+      title-generated-sql: Oluşturulan SQL
+      tag-remove-table: Tabloyu Kaldır
+      tag-add-column: Sütun ekle
+      tag-nullable: Nullable
+      tag-pk: PK
+      tag-unique: Eşsiz
+      tag-autoinc: AutoInc
+      tag-add-table: Tablo Ekle
+      tag-generate-sql: SQL oluştur
+  gitattributes-generator:
+    title: Gitattributes Generator
+    description: https://github.com/alexkaratarakis/gitattributes adresindeki ortak
+      yapılandırmadan .gitattributes dosyasını oluşturun.
+    texts:
+      label-gitattributes-templates: "Gitattributes Şablonları:"
+      placeholder-select-templates: Şablonları seçin
+      title-preview: Önizleme
+      tag-fetch-generate: Getir ve Oluştur
+  html-to-xhtml:
+    title: HTML'den XHTML'e
+    description: HTML'i katı XHTML'e dönüştürün (XML ayrıştırılabilir, kendi kendini
+      kapatan etiketler...).
+    texts:
+      placeholder-your-html-content: HTML içeriğiniz...
+      label-your-html-to-convert-to-xhtml: "XHTML'e dönüştürmek istediğiniz HTML kodunuz:"
+      label-add-xhtml-xmlns: "XHTML xmlns ekleyin:"
+      label-indentation: "Girinti:"
+      title-output-xhtml: "Çıktı XHTML:"
+  javascript-obfuscator:
+    title: Javascript Gizleyici
+    description: Base64 veya rot13 kodlaması kullanan JavaScript kod gizleyici
+    texts:
+      label-base-64: Base 64
+      label-rot-13: ROT 13
+      label-obfuscator-io: Obfuscator.io
+      label-your-javascript-code-to-obfuscate: "Gizlemek istediğiniz JavaScript kodunuz:"
+      label-obfuscation-method: "Gizleme yöntemi:"
+      title-obfuscted-js-code: Gizlenmiş JS Kodu
+      placeholder-enter-your-javascript-code-here: // JavaScript kodunuzu buraya girin
+  online-wiktionary:
+    title: Çevrimiçi Sözlük
+    description: Wiktionary'de kelime arama
+    texts:
+      label-english: İngilizce
+      label-french: Fransızca
+      label-german: Almanca
+      label-spanish: İspanyol
+      label-italian: İtalyan
+      label-russian: Rusça
+      label-chinese: Çince
+      label-japanese: Japonca
+      label-arabic: Arapça
+      placeholder-enter-a-word: Bir kelime girin…
+      placeholder-select-a-language: Bir dil seçin
+      tag-search-on-wiktionary: Wiktionary'de arama yapın
+      tag-enter-a-word-and-select-a-language-to-load-wiktionary: Bir kelime girin ve Wiktionary'yi yüklemek için bir dil seçin.
+  ptr-dns-generator:
+    title: PTR DNS Oluşturucu
+    description: DNS PTR kayıtları oluşturun
+    texts:
+      label-ip-address-ipv4-or-ipv6: "IP Adresi (IPv4 veya IPv6):"
+      placeholder-e-g-192-168-1-10-or-2001-db8-1: örneğin 192.168.1.10 veya 2001:db8::1
+  screen-memo:
+    title: Ekran Komutları Hızlı Referans Kılavuzu
+    description: Screen Linux komut notu
+  svg-previewer:
+    title: SVG Önizleyici
+    description: SVG dosyalarının önizlemesi
+    texts:
+      title-upload-a-svg-file: SVG Dosyası Yükle
+      title-raw-svg-content: "Ham SVG İçeriği:"
+      placeholder-paste-raw-svg-content-here: Ham SVG içeriğini buraya yapıştırın...
+      label-select-background: "Arka plan seçin:"
+      title-svg-preview: SVG Önizlemesi
+      tag-const-svgcontent-ref: const svgContent = ref
+  tmux-memo:
+    title: Tmux Komutları Hızlı Referans Kılavuzu
+    description: Tmux Linux komut notu
+  trigo-viewer:
+    title: Trigonometrik/Denklem Eğrisi Görselleştirici
+    description: x'e bağlı olarak trigonometrik veya denklemleri görselleştirin.
+    texts:
+      text-degrees: Derece (°)
+      text-value: Değer
+      placeholder-enter-equation-in-terms-of-x-e-g-sin-x-cos-2-x: Denklemi x cinsinden girin (örneğin sin(x) + cos(2*x))
+      label-equation-in-term-of-x: "x cinsinden denklem:"
+      label-domain: "İhtisas:"
+      tag-reset-zoom: Yakınlaştırmayı Sıfırla
+  zellij-memo:
+    title: Zellij Komut Hile Sayfası
+    description: Zellij Linux komut notu
+  dead-pixel:
+    texts:
+      title-dead-pixel-iframe: ölü piksel çerçevesi
+      tag-: "`;"
+      tag-keyboard-shortcuts: "Klavye kısayolları:"
+      tag-arrow-right-arrow-down-space: Sağ Ok, Aşağı Ok, Boşluk
+      tag-next-color: Sonraki renk
+      tag-arrow-left-arrow-up: Sol Ok, Yukarı Ok
+      tag-previous-color: Önceki renk
+      tag-esc: ESC
+      tag-exit-dead-pixel-mode: Ölü Piksel Modundan Çıkış
+      tag-start-dead-pixel: Ölü Piksel Başlatma
 about:
   alltools-title: Tüm {toolsCount} Araç
   tools:

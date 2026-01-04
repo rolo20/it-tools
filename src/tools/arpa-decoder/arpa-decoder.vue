@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { fromARPA } from '@/utils/ip';
+
+const { t } = useI18n();
 
 const arpaInput = ref('');
 
@@ -15,8 +18,8 @@ const decodedIP = computed(() => {
 
 <template>
   <div>
-    <NFormItem label="ARPA Address:" label-placement="left" mb-2>
-      <NInput v-model:value="arpaInput" placeholder="e.g. 10.1.168.192.in-addr.arpa. or xxxx.ip6.arpa." />
+    <NFormItem :label="t('tools.arpa-decoder.texts.label-arpa-address')" label-placement="left" mb-2>
+      <NInput v-model:value="arpaInput" :placeholder="t('tools.arpa-decoder.texts.placeholder-e-g-10-1-168-192-in-addr-arpa-or-xxxx-ip6-arpa')" />
     </NFormItem>
 
     <c-card v-if="decodedIP">

@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { toARPA } from '@/utils/ip';
+
+const { t } = useI18n();
 
 const ipInput = ref('');
 const ptrRecord = computed(() => {
@@ -14,8 +17,8 @@ const ptrRecord = computed(() => {
 
 <template>
   <div>
-    <NFormItem label="IP Address (IPv4 or IPv6):" label-placement="left" mb-2>
-      <NInput v-model:value="ipInput" placeholder="e.g. 192.168.1.10 or 2001:db8::1" />
+    <NFormItem :label="t('tools.ptr-dns-generator.texts.label-ip-address-ipv4-or-ipv6')" label-placement="left" mb-2>
+      <NInput v-model:value="ipInput" :placeholder="t('tools.ptr-dns-generator.texts.placeholder-e-g-192-168-1-10-or-2001-db8-1')" />
     </NFormItem>
 
     <c-card v-if="ptrRecord">

@@ -1,10 +1,11 @@
 import { ScreenShare } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Zellij Command Cheatsheet',
+  name: t('tools.zellij-memo.title'),
   path: '/zellij-memo',
-  description: 'Zellij linux command memo',
+  description: t('tools.zellij-memo.description'),
   keywords: ['terminal', 'linux', 'shell', 'zellij'],
   component: () => import('./zellij-memo.vue'),
   icon: ScreenShare,

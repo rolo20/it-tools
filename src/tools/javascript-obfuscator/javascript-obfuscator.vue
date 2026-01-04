@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { useObfuscateJavascript } from './javascript-obfuscator.service';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const code = ref(`function greet(name) {
   console.log('Hello ' + name);
@@ -10,15 +13,15 @@ const method = useQueryParamOrStorage<'base64' | 'rot13' | 'obfuscator.io'>({ na
 
 const methods = [
   {
-    label: 'Base 64',
+    label: t('tools.javascript-obfuscator.texts.label-base-64'),
     value: 'base64',
   },
   {
-    label: 'ROT 13',
+    label: t('tools.javascript-obfuscator.texts.label-rot-13'),
     value: 'rot13',
   },
   {
-    label: 'Obfuscator.io',
+    label: t('tools.javascript-obfuscator.texts.label-obfuscator-io'),
     value: 'obfuscator.io',
   },
 ];
@@ -31,8 +34,8 @@ const obfuscated = useObfuscateJavascript(code, method);
     <c-input-text
       v-model:value="code"
       raw-text
-      label="Your JavaScript code to obfuscate:"
-      placeholder="// Enter your JavaScript code here&#10;function example() {&#10;  console.log('Hello World');&#10;}"
+      :label="t('tools.javascript-obfuscator.texts.label-your-javascript-code-to-obfuscate')"
+      :placeholder="`${t('tools.javascript-obfuscator.texts.placeholder-enter-your-javascript-code-here')}\nfunction example()\n{\n  console.log('Hello World');\n}`"
       multiline
       rows="12"
       mb-2
@@ -40,13 +43,13 @@ const obfuscated = useObfuscateJavascript(code, method);
 
     <c-select
       v-model:value="method"
-      label="Obfuscation method:"
+      :label="t('tools.javascript-obfuscator.texts.label-obfuscation-method')"
       label-position="left"
       :options="methods"
       mb-2
     />
 
-    <c-card v-if="obfuscated" title="Obfuscted JS Code">
+    <c-card v-if="obfuscated" :title="t('tools.javascript-obfuscator.texts.title-obfuscted-js-code')">
       <textarea-copyable
         :value="obfuscated"
         language="js"

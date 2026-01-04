@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { onMounted } from 'vue';
 import { useLocalStorage } from '@vueuse/core';
+
+const { t } = useI18n();
 
 const options = useLocalStorage<{ label: string; value: string }[]>('gitattr-gen:opts2', []);
 const selected = ref<string[]>([]);
@@ -96,21 +99,21 @@ onMounted(loadOptions);
 
 <template>
   <div>
-    <n-form-item label="Gitattributes Templates:" label-placement="left">
+    <n-form-item :label="t('tools.gitattributes-generator.texts.label-gitattributes-templates')" label-placement="left">
       <NSelect
         v-model:value="selected"
         multiple
         filterable
-        placeholder="Select templates"
+        :placeholder="t('tools.gitattributes-generator.texts.placeholder-select-templates')"
         :options="options"
       />
     </n-form-item>
     <n-space justify="center" mb-2>
       <NButton type="primary" :disabled="!selected.length" @click="generateOutput">
-        Fetch & Generate
+        {{ t('tools.gitattributes-generator.texts.tag-fetch-generate') }}
       </NButton>
     </n-space>
-    <c-card v-if="output" title="Preview" mb-2>
+    <c-card v-if="output" :title="t('tools.gitattributes-generator.texts.title-preview')" mb-2>
       <textarea-copyable
         :value="output"
         language="bash"

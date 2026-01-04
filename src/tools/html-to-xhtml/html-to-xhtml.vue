@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { toStrictXhtml } from './html-to-xhtml.service';
 import TextareaCopyable from '@/components/TextareaCopyable.vue';
+
+const { t } = useI18n();
 
 const inputHtml = ref('');
 const addNamespace = ref(false);
@@ -26,24 +29,24 @@ const outputHtml = computed(() => {
     <c-input-text
       v-model:value="inputHtml"
       multiline raw-text
-      placeholder="Your HTML content..."
+      :placeholder="t('tools.html-to-xhtml.texts.placeholder-your-html-content')"
       rows="8"
       autofocus
-      label="Your HTML to convert to XHTML:"
+      :label="t('tools.html-to-xhtml.texts.label-your-html-to-convert-to-xhtml')"
       paste-html
       mb-1
     />
 
     <n-space justify="center" mb-2>
-      <n-form-item label="Add XHTML xmlns:" label-placement="left">
+      <n-form-item :label="t('tools.html-to-xhtml.texts.label-add-xhtml-xmlns')" label-placement="left">
         <n-switch v-model:value="addNamespace" />
       </n-form-item>
-      <n-form-item label="Indentation:" label-placement="left">
+      <n-form-item :label="t('tools.html-to-xhtml.texts.label-indentation')" label-placement="left">
         <n-input-number v-model:value="indentation" :min="0" />
       </n-form-item>
     </n-space>
 
-    <c-card v-if="outputHtml" title="Output XHTML:">
+    <c-card v-if="outputHtml" :title="t('tools.html-to-xhtml.texts.title-output-xhtml')">
       <TextareaCopyable
         :value="outputHtml"
         multiline

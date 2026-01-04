@@ -1,10 +1,11 @@
 import { Database } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Database Creation Builder',
+  name: t('tools.database-builder.title'),
   path: '/database-builder',
-  description: 'Build SQL CREATE DATABASE queries for various databases',
+  description: t('tools.database-builder.description'),
   keywords: ['database', 'create', 'ddl', 'builder', 'mysql', 'mongodb', 'sqlserver', 'sqlite', 'postgresql'],
   component: () => import('./database-builder.vue'),
   icon: Database,

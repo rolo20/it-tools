@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 interface Column {
   name: string
@@ -144,51 +147,51 @@ function generateSQL() {
 <template>
   <div>
     <NForm label-placement="left" label-width="130px">
-      <NFormItem label="Database Type:">
+      <NFormItem :label="t('tools.database-table-generator.texts.label-database-type')">
         <NSelect
           v-model:value="dbType"
           :options="[
-            { label: 'MySQL', value: 'mysql' },
-            { label: 'PostgreSQL', value: 'postgres' },
-            { label: 'SQLite', value: 'sqlite' },
-            { label: 'SQL Server', value: 'sqlserver' },
+            { label: t('tools.database-table-generator.texts.label-mysql'), value: 'mysql' },
+            { label: t('tools.database-table-generator.texts.label-postgresql'), value: 'postgres' },
+            { label: t('tools.database-table-generator.texts.label-sqlite'), value: 'sqlite' },
+            { label: t('tools.database-table-generator.texts.label-sql-server'), value: 'sqlserver' },
           ]"
         />
       </NFormItem>
 
-      <NFormItem label="Database Name:">
-        <NInput v-model:value="dbName" placeholder="Enter database name" />
+      <NFormItem :label="t('tools.database-table-generator.texts.label-database-name')">
+        <NInput v-model:value="dbName" :placeholder="t('tools.database-table-generator.texts.placeholder-enter-database-name')" />
       </NFormItem>
 
       <c-card v-for="(table, tIndex) in tables" :key="tIndex" mt-1>
         <NFormItem :label="`Table ${tIndex + 1} Name`">
-          <NInput v-model:value="table.name" placeholder="Table name" mr-1 />
+          <NInput v-model:value="table.name" :placeholder="t('tools.database-table-generator.texts.placeholder-table-name')" mr-1 />
           <NButton type="error" @click="removeTable(tIndex)">
-            Remove Table
+            {{ t('tools.database-table-generator.texts.tag-remove-table') }}
           </NButton>
         </NFormItem>
 
         <n-dynamic-input v-model:value="table.columns" :on-create="addColumn" show-sort-button>
           <template #create-button-default>
-            Add column
+            {{ t('tools.database-table-generator.texts.tag-add-column') }}
           </template>
           <template #default="{ value: col }">
             <div style="display: flex; align-items: center; width: 100%">
-              <NInput v-model:value="col.name" placeholder="Column name" style="width: 20%;" mr-1 />
+              <NInput v-model:value="col.name" :placeholder="t('tools.database-table-generator.texts.placeholder-column-name')" style="width: 20%;" mr-1 />
               <NSelect v-model:value="col.type" :options="dialectTypes[dbType].map(t => ({ label: t, value: t }))" style="width: 20%" mr-1 />
               <NCheckbox v-model:checked="col.nullable">
-                Nullable
+                {{ t('tools.database-table-generator.texts.tag-nullable') }}
               </NCheckbox>
               <NCheckbox v-model:checked="col.primaryKey">
-                PK
+                {{ t('tools.database-table-generator.texts.tag-pk') }}
               </NCheckbox>
               <NCheckbox v-model:checked="col.unique">
-                Unique
+                {{ t('tools.database-table-generator.texts.tag-unique') }}
               </NCheckbox>
               <NCheckbox v-model:checked="col.autoIncrement">
-                AutoInc
+                {{ t('tools.database-table-generator.texts.tag-autoinc') }}
               </NCheckbox>
-              <NInput v-model:value="col.defaultValue" placeholder="Default value" style="width: 20%;" />
+              <NInput v-model:value="col.defaultValue" :placeholder="t('tools.database-table-generator.texts.placeholder-default-value')" style="width: 20%;" />
             </div>
           </template>
         </n-dynamic-input>
@@ -196,7 +199,7 @@ function generateSQL() {
 
       <n-space justify="center" mt-1>
         <NButton type="info" @click="addTable">
-          Add Table
+          {{ t('tools.database-table-generator.texts.tag-add-table') }}
         </NButton>
       </n-space>
     </NForm>
@@ -205,11 +208,11 @@ function generateSQL() {
 
     <n-space justify="center" mt-2>
       <NButton type="success" @click="generateSQL">
-        Generate SQL
+        {{ t('tools.database-table-generator.texts.tag-generate-sql') }}
       </NButton>
     </n-space>
 
-    <c-card v-if="sqlOutput" title="Generated SQL" mt-1>
+    <c-card v-if="sqlOutput" :title="t('tools.database-table-generator.texts.title-generated-sql')" mt-1>
       <textarea-copyable :value="sqlOutput" language="sql" download-file-name="create-tables.sql" />
     </c-card>
   </div>

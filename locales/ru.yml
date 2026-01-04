@@ -910,6 +910,9 @@ tools:
       placeholder-your-string: Ваша строка...
       label-cleaning-regex: "Очищающее регулярное выражение:"
       placeholder-your-cleaning-regex: Ваше регулярное выражение очистки...
+      label-titlecase: "Заглавная буква:"
+      label-spongecase: "Чехол-губка:"
+      label-swapcase: "Swapcase:"
   html-entities:
     title: Экранирование HTML сущностей
     description: Экранируйте или разэкранируйте HTML сущности (заменяйте символы,
@@ -1086,6 +1089,7 @@ tools:
       tag-welcome-to-this-html-wysiwyg-editor: Добро пожаловать в этот HTML-редактор WYSIWYG
       tag-click-here-to-paste-or-edit-raw-html: Нажмите здесь, чтобы вставить или
         отредактировать необработанный HTML-код.
+      label-xhtmlfy: "XHtml:"
   yaml-to-toml:
     title: YAML в TOML
     description: Парсинг и конвертация YAML в TOML.
@@ -2069,6 +2073,7 @@ tools:
       tag-: "&#39;, &#39;"
       tag-copy-html-formatted: Копировать в формате HTML
       tag-copy-code-text: Скопировать текст кода
+      tag-copy-html-word: Скопировать в HTML/форматированный текст в Word
   coin-flipper:
     title: Монетка
     description: Подбросьте монетку
@@ -2955,6 +2960,8 @@ tools:
       label-merged-ical: Объединенный ICAL
       tag-delete: Удалить
       tag-merge-ical-files: Объединить файлы iCal
+      file-to-merge-file-name: "Файл для слияния: {0}"
+      download-merged-ical: Скачать объединенный iCal
     service:
       text:
         no-icals-parsed-successfully: Ни один icals не был успешно проанализирован
@@ -3254,6 +3261,15 @@ tools:
     texts:
       label-current-selected-node-jsonpath: "Текущий выбранный узел JSONPath:"
       label-your-edited-json: "Ваш отредактированный JSON:"
+      title-the-following-errors-occured: Произошли следующие ошибки.
+      tag-validation-successful: Проверка прошла успешно!
+      label-no-validation: Нет проверки
+      label-custom: Обычай
+      label-json-schema: "Схема JSON:"
+      placeholder-paste-your-json-schema-here: Вставьте сюда вашу JSON-схему...
+      title-schema-validation-errors: Ошибки проверки схемы
+      label-indent-size-0-compact: "Размер отступа (0 = Компактный):"
+      repair-json: Исправить JSON
   json-escaper:
     title: Экранирование/разэкранирование JSON
     description: Экранируйте и разэкранируйте строки JSON
@@ -5615,6 +5631,8 @@ tools:
       message-this-date-is-invalid-for-this-format: Эта дата недопустима для этого формата.
       placeholder-put-your-date-string-here: Введите здесь строку даты...
       placeholder-invalid-date: Неверная дата...
+      button-add-timezone: Добавить часовой пояс
+      placeholder-select-timezone: Выберите часовой пояс...
   extract-text-from-html:
     texts:
       message-provided-html-is-not-valid: Предоставленный HTML недействителен.
@@ -5964,6 +5982,12 @@ tools:
       heading-1: Заголовок 1
       inline-code: Встроенный код
       strike: Ударять
+      heading-5: Заголовок 5
+      text-left: Выровнять по левому краю
+      text-center: Выровнять по центру
+      text-right: Выровнять справа
+      text-justify: Выровнять по ширине
+      clear-align: Четкое выравнивание
   floating-point-number-converter:
     texts:
       label-32-bit-single-precision: 32-бит (одинарная точность)
@@ -6039,6 +6063,7 @@ tools:
       label-json-schema: "Схема JSON:"
       placeholder-paste-your-json-schema-here: Вставьте сюда вашу схему JSON...
       title-schema-validation-errors: Ошибки проверки схемы
+      label-unescape-json-string: "Расшифровка JSON-строки:"
     text:
       provided-json-is-not-valid: Указанный JSON недействителен.
       try-again-with-repairjsonlabel: Попробуйте еще раз с &quot;{0}&quot;
@@ -7277,6 +7302,9 @@ tools:
       label-signature: Подпись
       label-arguments: Аргументы
       title-structured-output-json: Структурированный вывод JSON
+      placeholder-quot-to-quot-quot-0x-quot-quot-data-quot-quot-0x-quot-or-raw-0x:
+        "{'{'}&quot;to&quot;:&quot;0x...&quot;,&quot;data&quot;:&quot;0x...&quo\
+        t;{'}'} или необработанный 0x...."
   file-splitter:
     title: Разделитель файлов
     description: Разделить JSON, XML или текстовый файл по группе узлов или по группе строк
@@ -7462,6 +7490,191 @@ tools:
       tag-link: Связь
       tag-status: Статус
       tag-open-url: Открыть URL
+  amortization-calculator:
+    title: Калькулятор амортизации
+    description: Рассчитайте график амортизации кредита с разбивкой по ежемесячным платежам.
+    footer: Калькулятор амортизации
+    texts:
+      title-loan-parameters: Параметры кредита
+      title-overview: Обзор
+      title-amortization-schedule: График амортизации
+      label-loan-amount: Сумма кредита
+      label-loan-term: Срок кредита
+      label-interest-rate: Процентная ставка
+      label-displayed-currency: Отображаемая валюта
+      label-end-of-year: Конец года {year}
+      label-year: Год
+      label-month: Месяц
+      label-interest: Интерес
+      label-principal: Главный
+      label-ending-balance: Конечный баланс
+      label-monthly-payment: Ежемесячный платеж
+      label-total-of-payments: Общая сумма платежей
+      label-total-interest: Общая сумма процентов
+      message-loan-amount-must-be-positive: Сумма кредита должна быть положительной.
+      message-loan-term-must-be-positive-integer: Срок кредита должен быть положительным целым числом.
+      message-interest-rate-must-be-between-1-and-100: Процентная ставка должна быть положительным значением от 0 до 100.
+  copy:
+    text:
+      copied-to-the-clipboard: Скопировано в буфер обмена
+  arpa-decoder:
+    title: Декодер ARPA
+    description: Расшифровка IPv4/6 ARPA-адресов или записей PTR.
+    texts:
+      label-arpa-address: "Адрес ARPA:"
+      placeholder-e-g-10-1-168-192-in-addr-arpa-or-xxxx-ip6-arpa: например, 10.1.168.192.in-addr.arpa. или xxxx.ip6.arpa.
+  database-builder:
+    title: Конструктор создания баз данных
+    description: Создавайте SQL-запросы типа CREATE DATABASE для различных баз данных.
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sql-server: SQL Server
+      label-oracle: Оракул
+      label-sqlite: SQLite
+      label-database-type: "Тип базы данных:"
+      label-database-name: "Название базы данных:"
+      placeholder-test: тест
+      label-server-address: "Адрес сервера:"
+      placeholder-127-0-0-1: 127.0.0.1
+      label-account: "Счет:"
+      label-password-leave-empty-to-generate: "Пароль (оставьте поле пустым для генерации):"
+      placeholder-leave-empty-for-random: Оставьте поле пустым для случайного выбора
+      label-permissions-all-privileges-if-none-selected: "Права доступа (ВСЕ ПРАВА, если ни одно не выбрано):"
+      title-generated-sql-instructions: "Сгенерированные SQL-инструкции:"
+      tag-select: ВЫБИРАТЬ
+      tag-insert: ВСТАВЛЯТЬ
+      tag-update: ОБНОВЛЯТЬ
+      tag-delete: УДАЛИТЬ
+      tag-create: СОЗДАВАТЬ
+      tag-drop: УРОНИТЬ
+      tag-alter: АЛЬТЕР
+      tag-index: УКАЗАТЕЛЬ
+      tag-execute: ВЫПОЛНЯТЬ
+      tag-references: СПИСОК ЛИТЕРАТУРЫ
+      tag-trigger: КУРОК
+      tag-usage: ИСПОЛЬЗОВАНИЕ
+      tag-replication-client: КЛИЕНТ РЕПЛИКАЦИИ
+      tag-replication-slave: РАБ-РЕПЛИКАЦИЯ
+      tag-generate-sql-instructions: Сгенерировать инструкции SQL
+  database-table-generator:
+    title: Генератор таблиц базы данных
+    description: Сгенерируйте SQL-запрос CREATE TABLE для распространенных баз данных.
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sqlite: SQLite
+      label-sql-server: SQL Server
+      label-database-type: "Тип базы данных:"
+      label-database-name: "Название базы данных:"
+      placeholder-enter-database-name: Введите название базы данных
+      placeholder-table-name: Название таблицы
+      placeholder-column-name: Название столбца
+      placeholder-default-value: Значение по умолчанию
+      title-generated-sql: Сгенерированный SQL-запрос
+      tag-remove-table: Удалить таблицу
+      tag-add-column: Добавить столбец
+      tag-nullable: Недействительный
+      tag-pk: ПК
+      tag-unique: Уникальный
+      tag-autoinc: АвтоИнк
+      tag-add-table: Добавить таблицу
+      tag-generate-sql: Сгенерировать SQL
+  gitattributes-generator:
+    title: Генератор атрибутов Gita
+    description: Сгенерируйте файл .gitattributes из стандартной конфигурации
+      https://github.com/alexkaratarakis/gitattributes
+    texts:
+      label-gitattributes-templates: "Шаблоны Gitattributes:"
+      placeholder-select-templates: Выберите шаблоны
+      title-preview: Предварительный просмотр
+      tag-fetch-generate: Получить и сгенерировать
+  html-to-xhtml:
+    title: HTML в XHTML
+    description: Преобразование HTML в строгий XHTML (XML-парсируемый,
+      самозакрывающиеся теги...).
+    texts:
+      placeholder-your-html-content: Ваш HTML-контент...
+      label-your-html-to-convert-to-xhtml: "Ваш HTML-код для преобразования в XHTML:"
+      label-add-xhtml-xmlns: "Добавить XHTML xmlns:"
+      label-indentation: "Отступ:"
+      title-output-xhtml: "Вывод XHTML:"
+  javascript-obfuscator:
+    title: Обфускатор JavaScript
+    description: Обфускатор JavaScript-кода с использованием кодировки base64 или rot13
+    texts:
+      label-base-64: База 64
+      label-rot-13: РОТ 13
+      label-obfuscator-io: Obfuscator.io
+      label-your-javascript-code-to-obfuscate: "Ваш JavaScript-код для обфускации:"
+      label-obfuscation-method: "Метод обфускации:"
+      title-obfuscted-js-code: Зашифрованный код JavaScript
+      placeholder-enter-your-javascript-code-here: // Введите свой JavaScript-код здесь
+  online-wiktionary:
+    title: Онлайн-словарь
+    description: Поиск слов в Викисловаре
+    texts:
+      label-english: Английский
+      label-french: Французский
+      label-german: немецкий
+      label-spanish: испанский
+      label-italian: итальянского
+      label-russian: Русский
+      label-chinese: китайский
+      label-japanese: японский
+      label-arabic: арабский
+      placeholder-enter-a-word: Введите слово…
+      placeholder-select-a-language: Выберите язык
+      tag-search-on-wiktionary: Поиск в Викисловаре
+      tag-enter-a-word-and-select-a-language-to-load-wiktionary: Введите слово и выберите язык, чтобы загрузить Викисловарь.
+  ptr-dns-generator:
+    title: Генератор DNS-запросов PTR
+    description: Генерация записей DNS PTR
+    texts:
+      label-ip-address-ipv4-or-ipv6: "IP-адрес (IPv4 или IPv6):"
+      placeholder-e-g-192-168-1-10-or-2001-db8-1: например, 192.168.1.10 или 2001:db8::1
+  screen-memo:
+    title: Шпаргалка по командам экрана
+    description: Заметка о командах Linux для экрана
+  svg-previewer:
+    title: Предварительный просмотр SVG
+    description: Предварительный просмотр SVG-файлов
+    texts:
+      title-upload-a-svg-file: Загрузите SVG-файл
+      title-raw-svg-content: "Исходный SVG-контент:"
+      placeholder-paste-raw-svg-content-here: Вставьте сюда исходный SVG-контент...
+      label-select-background: "Выберите фон:"
+      title-svg-preview: Предварительный просмотр SVG
+      tag-const-svgcontent-ref: const svgContent = ref
+  tmux-memo:
+    title: Шпаргалка по командам Tmux
+    description: Заметка о командах Tmux Linux
+  trigo-viewer:
+    title: Визуализатор тригонометрических уравнений/кривых
+    description: Визуализируйте тригонометрические уравнения или уравнения в
+      зависимости от x.
+    texts:
+      text-degrees: Градусы (°)
+      text-value: Ценить
+      placeholder-enter-equation-in-terms-of-x-e-g-sin-x-cos-2-x: Введите уравнение в терминах x (например, sin(x) + cos(2*x)).
+      label-equation-in-term-of-x: "Уравнение в терминах x:"
+      label-domain: "Домен:"
+      tag-reset-zoom: Сбросить масштаб
+  zellij-memo:
+    title: Шпаргалка по командам Zellij
+    description: Заметка о команде Zellij Linux
+  dead-pixel:
+    texts:
+      title-dead-pixel-iframe: мертвый пиксель-iframe
+      tag-: "`;"
+      tag-keyboard-shortcuts: "Клавиатурные сочетания:"
+      tag-arrow-right-arrow-down-space: Стрелка вправо, Стрелка вниз, Пробел
+      tag-next-color: ": Следующий цвет"
+      tag-arrow-left-arrow-up: Стрелка влево, стрелка вверх
+      tag-previous-color: ": Предыдущий цвет"
+      tag-esc: ESC
+      tag-exit-dead-pixel-mode: Выход из режима битых пикселей
+      tag-start-dead-pixel: Начало работы над мертвым пикселем
 spanCopyable:
   copy: Копировать в буфер обмена
   copied: Скопировано!

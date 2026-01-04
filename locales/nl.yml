@@ -862,6 +862,9 @@ tools:
       placeholder-your-string: Jouw snaar...
       label-cleaning-regex: "Regex opschonen:"
       placeholder-your-cleaning-regex: Uw schoonmaak regex...
+      label-titlecase: "Titelcase:"
+      label-spongecase: "Spongecase:"
+      label-swapcase: "Swapcase:"
   html-entities:
     title: HTML-entiteiten
     description: Escape of unescape HTML-entiteiten (vervang tekens zoals <, >, &, "
@@ -1036,6 +1039,7 @@ tools:
       tag-hey: Hoi!
       tag-welcome-to-this-html-wysiwyg-editor: Welkom bij deze HTML WYSIWYG-editor
       tag-click-here-to-paste-or-edit-raw-html: Klik hier om onbewerkte HTML te plakken of te bewerken
+      label-xhtmlfy: "XHtml:"
   yaml-to-toml:
     title: YAML naar TOML
     description: Parse en converteer YAML naar TOML.
@@ -1885,6 +1889,7 @@ tools:
       tag-: "', '"
       tag-copy-html-formatted: Kopieer HTML geformatteerd
       tag-copy-code-text: Kopieer codetekst
+      tag-copy-html-word: Kopieer naar HTML/opgemaakte tekst in Word
   coin-flipper:
     title: Muntengooier
     description: Gooi een muntje op
@@ -2893,6 +2898,15 @@ tools:
     texts:
       label-current-selected-node-jsonpath: "Huidig geselecteerd knooppunt JSONPath:"
       label-your-edited-json: "Uw bewerkte JSON:"
+      title-the-following-errors-occured: De volgende fouten zijn opgetreden.
+      tag-validation-successful: Validatie geslaagd!
+      label-no-validation: Geen validatie
+      label-custom: Aangepast
+      label-json-schema: "JSON-schema:"
+      placeholder-paste-your-json-schema-here: Plak hier je JSON-schema...
+      title-schema-validation-errors: Schemavalidatiefouten
+      label-indent-size-0-compact: "Inspringgrootte (0 = Compact):"
+      repair-json: JSON repareren
   json-escaper:
     title: Json Escaper/Unescaper
     description: JSON-string ontsnappen en ontvluchten
@@ -4935,6 +4949,8 @@ tools:
       message-this-date-is-invalid-for-this-format: Deze datum is ongeldig voor dit formaat
       placeholder-put-your-date-string-here: Voer hier uw datumreeks in...
       placeholder-invalid-date: Ongeldige datum...
+      button-add-timezone: Tijdzone toevoegen
+      placeholder-select-timezone: Selecteer een tijdzone...
   extract-text-from-html:
     texts:
       message-provided-html-is-not-valid: De opgegeven HTML is niet geldig.
@@ -5683,6 +5699,8 @@ tools:
       label-merged-ical: Samengevoegde ICAL
       tag-delete: Verwijderen
       tag-merge-ical-files: iCal-bestanden samenvoegen
+      file-to-merge-file-name: "Te combineren bestand: {0}"
+      download-merged-ical: Download samengevoegde iCal-bestanden
     service:
       text:
         no-icals-parsed-successfully: Geen icals succesvol geparseerd
@@ -5744,6 +5762,12 @@ tools:
       heading-1: Kop 1
       inline-code: Inline-code
       strike: Staking
+      heading-5: Kop 5
+      text-left: Links uitlijnen
+      text-center: Centreren
+      text-right: Rechts uitlijnen
+      text-justify: Uitlijnen Rechtvaardigen
+      clear-align: Duidelijke uitlijning
   unicode-formatter:
     title: Unicode-formatter
     description: Tekst opmaken met Unicode-lettertypen
@@ -5944,6 +5968,7 @@ tools:
       label-json-schema: "JSON-schema:"
       placeholder-paste-your-json-schema-here: Plak hier uw JSON-schema...
       title-schema-validation-errors: Schemavalidatiefouten
+      label-unescape-json-string: "Ontsleutel JSON-string:"
     text:
       provided-json-is-not-valid: Mits JSON niet geldig is.
       try-again-with-repairjsonlabel: Probeer het opnieuw met "{0}"
@@ -7248,6 +7273,9 @@ tools:
       label-signature: Handtekening
       label-arguments: Argumenten
       title-structured-output-json: Gestructureerde uitvoer JSON
+      placeholder-quot-to-quot-quot-0x-quot-quot-data-quot-quot-0x-quot-or-raw-0x:
+        "{'{'}&quot;to&quot;:&quot;0x...&quot;,&quot;data&quot;:&quot;0x...&quo\
+        t;{'}'} of ruwe 0x...."
   file-splitter:
     title: Bestandssplitter
     description: Splits JSON, XML of tekstbestand per groep knooppunten of per groep lijnen
@@ -7437,6 +7465,192 @@ tools:
       tag-link: Link
       tag-status: Status
       tag-open-url: Open URL
+  amortization-calculator:
+    title: Amortisatiecalculator
+    description: Bereken aflossingsschema's voor leningen met een overzicht van de
+      maandelijkse betalingen.
+    footer: Amortisatiecalculator
+    texts:
+      title-loan-parameters: Leningparameters
+      title-overview: Overzicht
+      title-amortization-schedule: Amortisatieschema
+      label-loan-amount: Leningbedrag
+      label-loan-term: Leentermijn
+      label-interest-rate: Rente
+      label-displayed-currency: Weergegeven valuta
+      label-end-of-year: Einde van het jaar {year}
+      label-year: Jaar
+      label-month: Maand
+      label-interest: Interesse
+      label-principal: Voornaam
+      label-ending-balance: Eindsaldo
+      label-monthly-payment: Maandelijkse betaling
+      label-total-of-payments: Totaal van de betalingen
+      label-total-interest: Totale rente
+      message-loan-amount-must-be-positive: Het leenbedrag moet een positief getal zijn.
+      message-loan-term-must-be-positive-integer: De looptijd van de lening moet een positief geheel getal zijn.
+      message-interest-rate-must-be-between-1-and-100: De rente moet een positieve waarde zijn tussen 0 en 100.
+  copy:
+    text:
+      copied-to-the-clipboard: Gekopieerd naar het klembord
+  arpa-decoder:
+    title: ARPA-decoder
+    description: Decodeer IPv4/6 ARPA-adressen of PTR-records
+    texts:
+      label-arpa-address: "ARPA-adres:"
+      placeholder-e-g-10-1-168-192-in-addr-arpa-or-xxxx-ip6-arpa: bijv. 10.1.168.192.in-addr.arpa. of xxxx.ip6.arpa.
+  database-builder:
+    title: Database-creatiebuilder
+    description: Stel SQL CREATE DATABASE-query's samen voor verschillende databases.
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sql-server: SQL Server
+      label-oracle: Orakel
+      label-sqlite: SQLite
+      label-database-type: "Databasetype:"
+      label-database-name: "Databasenaam:"
+      placeholder-test: test
+      label-server-address: "Serveradres:"
+      placeholder-127-0-0-1: 127.0.0.1
+      label-account: "Rekening:"
+      label-password-leave-empty-to-generate: "Wachtwoord (laat leeg om te genereren):"
+      placeholder-leave-empty-for-random: laat leeg voor willekeurige
+      label-permissions-all-privileges-if-none-selected: "Machtigingen (ALLE RECHTEN als er geen geselecteerd zijn):"
+      title-generated-sql-instructions: "Gegenereerde SQL-instructies:"
+      tag-select: SELECT
+      tag-insert: INVOEGEN
+      tag-update: UPDATE
+      tag-delete: VERWIJDEREN
+      tag-create: CREËREN
+      tag-drop: DRUPPEL
+      tag-alter: WIJZIGEN
+      tag-index: INDEX
+      tag-execute: UITVOEREN
+      tag-references: REFERENTIES
+      tag-trigger: TREKKER
+      tag-usage: GEBRUIK
+      tag-replication-client: REPLICATIECLIENT
+      tag-replication-slave: REPLICATIESLAAF
+      tag-generate-sql-instructions: SQL-instructies genereren
+  database-table-generator:
+    title: Database tabelgenerator
+    description: Genereer SQL CREATE TABLE voor veelgebruikte databases
+    texts:
+      label-mysql: MySQL
+      label-postgresql: PostgreSQL
+      label-sqlite: SQLite
+      label-sql-server: SQL Server
+      label-database-type: "Databasetype:"
+      label-database-name: "Databasenaam:"
+      placeholder-enter-database-name: Voer de databasenaam in
+      placeholder-table-name: Tabelnaam
+      placeholder-column-name: Kolomnaam
+      placeholder-default-value: Standaardwaarde
+      title-generated-sql: Gegenereerde SQL
+      tag-remove-table: Verwijder tabel
+      tag-add-column: Kolom toevoegen
+      tag-nullable: Nullable
+      tag-pk: PK
+      tag-unique: Uniek
+      tag-autoinc: AutoInc
+      tag-add-table: Tabel toevoegen
+      tag-generate-sql: Genereer SQL
+  gitattributes-generator:
+    title: Gitattributengenerator
+    description: Genereer .gitattributes op basis van de algemene configuratie van
+      https://github.com/alexkaratarakis/gitattributes
+    texts:
+      label-gitattributes-templates: "Gitattributes-sjablonen:"
+      placeholder-select-templates: Sjablonen selecteren
+      title-preview: Voorbeeld
+      tag-fetch-generate: Ophalen en genereren
+  html-to-xhtml:
+    title: HTML naar XHTML
+    description: Converteer HTML naar strikte XHTML (XML-parseerbaar, met
+      zelfsluitende tags...).
+    texts:
+      placeholder-your-html-content: Uw HTML-inhoud...
+      label-your-html-to-convert-to-xhtml: "Uw HTML-code omzetten naar XHTML:"
+      label-add-xhtml-xmlns: "XHTML xmlns toevoegen:"
+      label-indentation: "Inspringing:"
+      title-output-xhtml: "Uitvoer XHTML:"
+  javascript-obfuscator:
+    title: Javascript Obfuscator
+    description: JavaScript-code-obfuscator met behulp van base64- of rot13-codering.
+    texts:
+      label-base-64: Basis 64
+      label-rot-13: ROT 13
+      label-obfuscator-io: Obfuscator.io
+      label-your-javascript-code-to-obfuscate: "Uw JavaScript-code die u wilt verbergen:"
+      label-obfuscation-method: "Verhullingsmethode:"
+      title-obfuscted-js-code: Versleutelde JS-code
+      placeholder-enter-your-javascript-code-here: // Voer hier uw JavaScript-code in
+  online-wiktionary:
+    title: Online woordenboek
+    description: Zoek woorden in Wiktionary
+    texts:
+      label-english: Engels
+      label-french: Frans
+      label-german: Duits
+      label-spanish: Spaans
+      label-italian: Italiaans
+      label-russian: Russisch
+      label-chinese: Chinese
+      label-japanese: Japanse
+      label-arabic: Arabisch
+      placeholder-enter-a-word: Voer een woord in…
+      placeholder-select-a-language: Selecteer een taal
+      tag-search-on-wiktionary: Zoeken op Wiktionary
+      tag-enter-a-word-and-select-a-language-to-load-wiktionary: Voer een woord in en selecteer een taal om Wiktionary te laden.
+  ptr-dns-generator:
+    title: PTR DNS-generator
+    description: DNS PTR-records genereren
+    texts:
+      label-ip-address-ipv4-or-ipv6: "IP-adres (IPv4 of IPv6):"
+      placeholder-e-g-192-168-1-10-or-2001-db8-1: bijv. 192.168.1.10 of 2001:db8::1
+  screen-memo:
+    title: Spiekbriefje voor schermopdrachten
+    description: Screen linux command memo
+  svg-previewer:
+    title: SVG-voorbeeldweergave
+    description: Bekijk SVG-bestanden
+    texts:
+      title-upload-a-svg-file: Een SVG-bestand uploaden
+      title-raw-svg-content: "Ruwe SVG-inhoud:"
+      placeholder-paste-raw-svg-content-here: Plak hier de onbewerkte SVG-inhoud...
+      label-select-background: "Selecteer achtergrond:"
+      title-svg-preview: SVG-voorbeeld
+      tag-const-svgcontent-ref: const svgContent = ref
+  tmux-memo:
+    title: Spiekbriefje voor Tmux-opdrachten
+    description: Tmux Linux-opdracht memo
+  trigo-viewer:
+    title: Trigonometrische/vergelijkingscurve-visualisator
+    description: Visualiseer goniometrische vergelijkingen of vergelijkingen
+      afhankelijk van x.
+    texts:
+      text-degrees: Graden (°)
+      text-value: Waarde
+      placeholder-enter-equation-in-terms-of-x-e-g-sin-x-cos-2-x: Voer de vergelijking in termen van x in (bijv. sin(x) + cos(2*x)).
+      label-equation-in-term-of-x: "Vergelijking uitgedrukt in termen van x:"
+      label-domain: "Domein:"
+      tag-reset-zoom: Zoom opnieuw instellen
+  zellij-memo:
+    title: Spiekbrief voor Zellij-commando's
+    description: Zellij linux-opdracht memo
+  dead-pixel:
+    texts:
+      title-dead-pixel-iframe: dead-pixel-iframe
+      tag-: "`;"
+      tag-keyboard-shortcuts: "Toetsenbord sneltoetsen:"
+      tag-arrow-right-arrow-down-space: Pijl naar rechts, pijl naar beneden, spatie
+      tag-next-color: Volgende kleur
+      tag-arrow-left-arrow-up: Pijl naar links, pijl omhoog
+      tag-previous-color: Vorige kleur
+      tag-esc: ESC
+      tag-exit-dead-pixel-mode: ": Verlaat de modus voor dode pixels"
+      tag-start-dead-pixel: Start dode pixel
 about:
   alltools-title: Alle {toolsCount}-hulpmiddelen
   tools:

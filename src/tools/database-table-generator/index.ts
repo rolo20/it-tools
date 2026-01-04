@@ -1,10 +1,11 @@
 import { Database } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Database Table Generator',
+  name: t('tools.database-table-generator.title'),
   path: '/database-table-generator',
-  description: 'Generate SQL CREATE TABLE for common databases',
+  description: t('tools.database-table-generator.description'),
   keywords: ['database', 'table', 'generator', 'mysql', 'mongodb', 'sqlserver', 'sqlite', 'postgresql'],
   component: () => import('./database-table-generator.vue'),
   icon: Database,

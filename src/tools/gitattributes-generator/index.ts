@@ -1,10 +1,11 @@
 import { BrandGit } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Gitattributes Generator',
+  name: t('tools.gitattributes-generator.title'),
   path: '/gitattributes-generator',
-  description: 'Generate .gitattributes from common configuration of https://github.com/alexkaratarakis/gitattributes',
+  description: t('tools.gitattributes-generator.description'),
   keywords: ['gitattributes', 'generator'],
   component: () => import('./gitattributes-generator.vue'),
   icon: BrandGit,

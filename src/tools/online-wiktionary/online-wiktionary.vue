@@ -1,21 +1,24 @@
-<script setup>
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { ref } from 'vue';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const query = ref('');
 const language = useQueryParamOrStorage({ name: 'lang', storageName: 'wiktionary:l', defaultValue: 'en' });
 
 // Extend this list as needed
 const languageOptions = [
-  { label: 'English', value: 'en' },
-  { label: 'French', value: 'fr' },
-  { label: 'German', value: 'de' },
-  { label: 'Spanish', value: 'es' },
-  { label: 'Italian', value: 'it' },
-  { label: 'Russian', value: 'ru' },
-  { label: 'Chinese', value: 'zh' },
-  { label: 'Japanese', value: 'ja' },
-  { label: 'Arabic', value: 'ar' },
+  { label: t('tools.online-wiktionary.texts.label-english'), value: 'en' },
+  { label: t('tools.online-wiktionary.texts.label-french'), value: 'fr' },
+  { label: t('tools.online-wiktionary.texts.label-german'), value: 'de' },
+  { label: t('tools.online-wiktionary.texts.label-spanish'), value: 'es' },
+  { label: t('tools.online-wiktionary.texts.label-italian'), value: 'it' },
+  { label: t('tools.online-wiktionary.texts.label-russian'), value: 'ru' },
+  { label: t('tools.online-wiktionary.texts.label-chinese'), value: 'zh' },
+  { label: t('tools.online-wiktionary.texts.label-japanese'), value: 'ja' },
+  { label: t('tools.online-wiktionary.texts.label-arabic'), value: 'ar' },
 ];
 
 const iframeUrl = ref('');
@@ -30,7 +33,7 @@ function openSearch() {
     <n-form-item label="" label-placement="left">
       <n-input
         v-model:value="query"
-        placeholder="Enter a word…"
+        :placeholder="t('tools.online-wiktionary.texts.placeholder-enter-a-word')"
         clearable
         mr-1
       />
@@ -38,7 +41,7 @@ function openSearch() {
       <n-select
         v-model:value="language"
         :options="languageOptions"
-        placeholder="Select a language"
+        :placeholder="t('tools.online-wiktionary.texts.placeholder-select-a-language')"
         filterable
       />
     </n-form-item>
@@ -49,7 +52,7 @@ function openSearch() {
         :disabled="!query || !language"
         @click="openSearch"
       >
-        Search on Wiktionary
+        {{ t('tools.online-wiktionary.texts.tag-search-on-wiktionary') }}
       </n-button>
     </n-space>
 
@@ -62,7 +65,7 @@ function openSearch() {
         style="width: 100%; height: 100%; border: none;"
       />
       <div v-else style="padding: 1rem; text-align: center; color: #888;">
-        Enter a word and select a language to load Wiktionary
+        {{ t('tools.online-wiktionary.texts.tag-enter-a-word-and-select-a-language-to-load-wiktionary') }}
       </div>
     </div>
   </div>

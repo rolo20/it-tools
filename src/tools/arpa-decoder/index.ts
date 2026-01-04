@@ -1,10 +1,11 @@
 import { World } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'ARPA Decoder',
+  name: t('tools.arpa-decoder.title'),
   path: '/arpa-decoder',
-  description: 'Decode IPv4/6 ARPA addresses or PTR record',
+  description: t('tools.arpa-decoder.description'),
   keywords: ['arpa', 'ptr', 'ip', 'dns', 'decoder'],
   component: () => import('./arpa-decoder.vue'),
   icon: World,

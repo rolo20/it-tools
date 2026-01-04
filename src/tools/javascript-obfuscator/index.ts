@@ -1,10 +1,11 @@
 import { Lock } from '@vicons/tabler';
 import { defineTool } from '../tool';
+import { translate as t } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: 'Javascript Obfuscator',
+  name: t('tools.javascript-obfuscator.title'),
   path: '/javascript-obfuscator',
-  description: 'Javascript code obfuscator using base64 or rot13 encoding',
+  description: t('tools.javascript-obfuscator.description'),
   keywords: ['javascript', 'js', 'rot13', 'base64', 'obfuscator'],
   component: () => import('./javascript-obfuscator.vue'),
   icon: Lock,
