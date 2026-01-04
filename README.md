@@ -253,6 +253,8 @@ sudo lxc-create -n sharevb-it-tools -t oci -- --url docker://ghcr.io/sharevb/it-
 
 ### Recommended IDE Setup
 
+To install VSCode in WSL2 (Windows), see: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode
+
 [VSCode](https://code.visualstudio.com/) with the following extensions:
 
 - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
