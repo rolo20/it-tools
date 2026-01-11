@@ -6992,9 +6992,6 @@ tools:
     texts:
       placeholder-select-templates-e-g-node-python-vue: 选择模板（例如 node、python、vue）
       title-gitignore: .gitignore
-      tag-const-availabletemplates-ref: const availableTemplates = ref
-      tag-this-tool-use: 此工具用途：
-      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
       tag-generate: 产生
   i-and-l-checker:
     title: 我和 L 检查器
@@ -7143,8 +7140,6 @@ tools:
       label-short-urls-to-expand: 展开后的短链接：
       placeholder-enter-short-urls-one-per-line: 输入短链接（每行一个）
       title-result: 结果
-      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server: 此工具利用 https://cors-anywhere.com 来绕过 CORS。这是一个社区驱动的服务器。
-      tag-see-here-for-more-information: 更多信息请点击此处查看。
       tag-expand-all: 全部展开
       tag-download-resuls-as-csv: 将结果下载为 CSV 文件
       tag-short-url: 短网址
@@ -7152,6 +7147,17 @@ tools:
       tag-link: 关联
       tag-status: 地位
       tag-open-url: 打开网址
+      cors-anywhere-configuration: CORS Anywhere 配置
+      self-hosted-cors-anywhere: 自托管 CORS Anywhere
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a: 此工具需要 CORS Anywhere 实例来绕过 CORS 策略。您可以使用
+      put-your-cors-anywhere-instance-url: 请输入您的 CORS Anywhere 实例 URL...
+      cors-anywhere-instance-url: CORS Anywhere实例URL：
+      expanded-url: 展开后的网址
+      short-url: 短链接
+      failed-to-expand-some-urls: 部分URL展开失败。
+      failed: 失败的
+      no-redirect: 无重定向
+      expanded: 扩展
   copy:
     text:
       copied-to-the-clipboard: 已复制到剪贴板
@@ -7311,3 +7317,66 @@ tools:
       tag-esc: ESC键
       tag-exit-dead-pixel-mode: 退出死像素模式
       tag-start-dead-pixel: 开始死像素
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: 排除SI前缀
+    text:
+      si-converter: 转到 SI 前缀转换器
+  geo-coordinates-converter:
+    title: 地理坐标转换器
+    description: 在 WGS84、GCJ02、BD09 和 CGCS2000 之间转换地理坐标
+    texts:
+      label-latitude: 纬度：
+      label-longitude: 经度：
+      label-csv-content-lng-lat: CSV 内容（经度，纬度）：
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert: 请按此顺序输入您的经度和纬度 CSV 文件进行转换……
+      title-conversion-results: 转化结果
+      title-notes: 笔记
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326（全球标准）
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap（高德地图、QQ地图）
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap（百度地图）
+      tag-bd09mc-bd09meter-baidu-meter: BD09MC/BD09米（百度米）
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000（中国大地测量系统2000）
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: 转换单个
+      tag-convert-batch: 批量转换
+      tag-longitude-east-is-positive-west-is-negative: 经度：东为正，西为负。
+      tag-latitude-north-is-positive-south-is-negative: 纬度：北纬为正，南纬为负。
+  si-prefixes-converter:
+    title: SI 前缀转换器
+    description: 公制前缀转换
+    texts:
+      label-quetta-q: 奎达（Q）
+      label-ronna-r: 罗娜（R）
+      label-yotta-y: 约塔 (Y)
+      label-zetta-z: zetta (Z)
+      label-exa-e: exa (E)
+      label-peta-p: 地图（P）
+      label-tera-t: 太拉（T）
+      label-giga-g: 吉（G）
+      label-mega-m: 兆（M）
+      label-kilo-k: 千克
+      label-hecto-h: 百（h）
+      label-deca-da: 十（来自）
+      label-unit: 单元
+      label-deci-d: 所以（d）
+      label-centi-c: 厘（c）
+      label-milli-m: 国民（m）
+      label-micro-µ: 微米 (µ)
+      label-nano-n: 纳米（n）
+      label-pico-p: 皮克（p）
+      label-femto-f: 飞秒 (f)
+      label-atto-a: （a）
+      label-zepto-z: zepto (z)
+      label-yocto-y: yocto (y)
+      label-ronto-r: ronto (r)
+      label-quecto-q: 我饿了。
+      label-auto: 汽车
+      label-fixed: 固定的
+      label-exponential: 指数
+      label-convert: 转变：
+      label-mode: 模式：
+      label-decimals: 小数：
+      label-thousand-separators: 千位分隔符：
+      label-to: 到：
+      tag-: =

@@ -7299,9 +7299,6 @@ tools:
     texts:
       placeholder-select-templates-e-g-node-python-vue: Selecteer sjablonen (bijv. Node, Python, Vue)
       title-gitignore: .gitignore
-      tag-const-availabletemplates-ref: const beschikbareSjablonen = ref
-      tag-this-tool-use: "Deze tool gebruikt:"
-      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
       tag-generate: Genereren
   i-and-l-checker:
     title: I en L-controleur
@@ -7454,10 +7451,6 @@ tools:
       label-short-urls-to-expand: "Korte URL's om uit te breiden:"
       placeholder-enter-short-urls-one-per-line: Voer korte URL's in (één per regel)
       title-result: Resultaat
-      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
-        Deze tool maakt gebruik van https://cors-anywhere.com om CORS te
-        omzeilen. Dit is een door de community aangestuurde server.
-      tag-see-here-for-more-information: Zie hier voor meer informatie
       tag-expand-all: Alles uitvouwen
       tag-download-resuls-as-csv: Resultaten downloaden als CSV
       tag-short-url: Korte URL
@@ -7465,6 +7458,19 @@ tools:
       tag-link: Link
       tag-status: Status
       tag-open-url: Open URL
+      cors-anywhere-configuration: CORS Anywhere-configuratie
+      self-hosted-cors-anywhere: Zelf gehoste CORS Anywhere
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        Deze tool vereist een CORS Anywhere-instantie om het CORS-beleid te
+        omzeilen. U kunt een
+      put-your-cors-anywhere-instance-url: Voer hier de URL van uw CORS Anywhere-instantie in...
+      cors-anywhere-instance-url: "CORS Anywhere-instantie-URL:"
+      expanded-url: Uitgebreide URL
+      short-url: Korte URL
+      failed-to-expand-some-urls: Het is niet gelukt om sommige URL's uit te breiden.
+      failed: Mislukt
+      no-redirect: Geen omleiding
+      expanded: Uitgebreid
   amortization-calculator:
     title: Amortisatiecalculator
     description: Bereken aflossingsschema's voor leningen met een overzicht van de
@@ -7651,6 +7657,71 @@ tools:
       tag-esc: ESC
       tag-exit-dead-pixel-mode: ": Verlaat de modus voor dode pixels"
       tag-start-dead-pixel: Start dode pixel
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Sluit SI-voorvoegsels uit.
+    text:
+      si-converter: Ga naar de SI-voorvoegselconverter
+  geo-coordinates-converter:
+    title: Omrekenaar van geografische coördinaten
+    description: Converteer geografische coördinaten tussen WGS84, GCJ02, BD09 en CGCS2000.
+    texts:
+      label-latitude: "Breedte:"
+      label-longitude: "Lengte:"
+      label-csv-content-lng-lat: "CSV-inhoud (Lengtegraad, Breedtegraad):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert:
+        Voer uw lengte- en breedtegraad (in deze volgorde) in als CSV-bestand om
+        te converteren...
+      title-conversion-results: Conversieresultaten
+      title-notes: Notities
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (Wereldwijde standaard)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (Gaode, QQ Maps)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (Baidu Maps)
+      tag-bd09mc-bd09meter-baidu-meter: BD09MC/BD09Meter (Baidu-meter)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (China Geodetic System 2000)
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: Converteer enkelvoudig
+      tag-convert-batch: Batch converteren
+      tag-longitude-east-is-positive-west-is-negative: "Lengtegraad: Oost is positief, West is negatief."
+      tag-latitude-north-is-positive-south-is-negative: "Breedtegraad: Noord is positief, Zuid is negatief."
+  si-prefixes-converter:
+    title: SI-voorvoegselomzetter
+    description: Omrekenen tussen metrische voorvoegsels
+    texts:
+      label-quetta-q: Quetta (Q)
+      label-ronna-r: Ronna (R)
+      label-yotta-y: Yotta (Y)
+      label-zetta-z: zetta (Z)
+      label-exa-e: exa (E)
+      label-peta-p: kaart (P)
+      label-tera-t: tera (T)
+      label-giga-g: giga (G)
+      label-mega-m: mega (M)
+      label-kilo-k: kilo (k)
+      label-hecto-h: hecto (h)
+      label-deca-da: tien (van)
+      label-unit: eenheid
+      label-deci-d: dus (d)
+      label-centi-c: centi (c)
+      label-milli-m: nationaal (m)
+      label-micro-µ: micro (µ)
+      label-nano-n: nano (n)
+      label-pico-p: pico (p)
+      label-femto-f: femto (f)
+      label-atto-a: handeling (a)
+      label-zepto-z: zepto (z)
+      label-yocto-y: yocto (y)
+      label-ronto-r: ronto (r)
+      label-quecto-q: Ik heb honger.
+      label-auto: Auto
+      label-fixed: Vast
+      label-exponential: Exponentieel
+      label-convert: "Overzetten:"
+      label-mode: "Modus:"
+      label-decimals: "Decimalen:"
+      label-thousand-separators: "Duizend scheidingstekens:"
+      label-to: "Naar:"
+      tag-: =
 about:
   alltools-title: Alle {toolsCount}-hulpmiddelen
   tools:

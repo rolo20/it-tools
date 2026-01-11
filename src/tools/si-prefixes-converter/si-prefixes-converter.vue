@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import Big from 'big.js';
 import { useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 interface Prefix {
   label: string
@@ -9,31 +12,31 @@ interface Prefix {
 };
 
 const prefixes: Prefix[] = [
-  { label: 'quetta (Q)', symbol: 'Q', exponent: 30 },
-  { label: 'ronna (R)', symbol: 'R', exponent: 27 },
-  { label: 'yotta (Y)', symbol: 'Y', exponent: 24 },
-  { label: 'zetta (Z)', symbol: 'Z', exponent: 21 },
-  { label: 'exa (E)', symbol: 'E', exponent: 18 },
-  { label: 'peta (P)', symbol: 'P', exponent: 15 },
-  { label: 'tera (T)', symbol: 'T', exponent: 12 },
-  { label: 'giga (G)', symbol: 'G', exponent: 9 },
-  { label: 'mega (M)', symbol: 'M', exponent: 6 },
-  { label: 'kilo (k)', symbol: 'k', exponent: 3 },
-  { label: 'hecto (h)', symbol: 'h', exponent: 2 },
-  { label: 'deca (da)', symbol: 'da', exponent: 1 },
-  { label: 'unit', symbol: '0', exponent: 0 },
-  { label: 'deci (d)', symbol: 'd', exponent: -1 },
-  { label: 'centi (c)', symbol: 'c', exponent: -2 },
-  { label: 'milli (m)', symbol: 'm', exponent: -3 },
-  { label: 'micro (µ)', symbol: 'µ', exponent: -6 },
-  { label: 'nano (n)', symbol: 'n', exponent: -9 },
-  { label: 'pico (p)', symbol: 'p', exponent: -12 },
-  { label: 'femto (f)', symbol: 'f', exponent: -15 },
-  { label: 'atto (a)', symbol: 'a', exponent: -18 },
-  { label: 'zepto (z)', symbol: 'z', exponent: -21 },
-  { label: 'yocto (y)', symbol: 'y', exponent: -24 },
-  { label: 'ronto (r)', symbol: 'r', exponent: -27 },
-  { label: 'quecto (q)', symbol: 'q', exponent: -30 },
+  { label: t('tools.si-prefixes-converter.texts.label-quetta-q'), symbol: 'Q', exponent: 30 },
+  { label: t('tools.si-prefixes-converter.texts.label-ronna-r'), symbol: 'R', exponent: 27 },
+  { label: t('tools.si-prefixes-converter.texts.label-yotta-y'), symbol: 'Y', exponent: 24 },
+  { label: t('tools.si-prefixes-converter.texts.label-zetta-z'), symbol: 'Z', exponent: 21 },
+  { label: t('tools.si-prefixes-converter.texts.label-exa-e'), symbol: 'E', exponent: 18 },
+  { label: t('tools.si-prefixes-converter.texts.label-peta-p'), symbol: 'P', exponent: 15 },
+  { label: t('tools.si-prefixes-converter.texts.label-tera-t'), symbol: 'T', exponent: 12 },
+  { label: t('tools.si-prefixes-converter.texts.label-giga-g'), symbol: 'G', exponent: 9 },
+  { label: t('tools.si-prefixes-converter.texts.label-mega-m'), symbol: 'M', exponent: 6 },
+  { label: t('tools.si-prefixes-converter.texts.label-kilo-k'), symbol: 'k', exponent: 3 },
+  { label: t('tools.si-prefixes-converter.texts.label-hecto-h'), symbol: 'h', exponent: 2 },
+  { label: t('tools.si-prefixes-converter.texts.label-deca-da'), symbol: 'da', exponent: 1 },
+  { label: t('tools.si-prefixes-converter.texts.label-unit'), symbol: '0', exponent: 0 },
+  { label: t('tools.si-prefixes-converter.texts.label-deci-d'), symbol: 'd', exponent: -1 },
+  { label: t('tools.si-prefixes-converter.texts.label-centi-c'), symbol: 'c', exponent: -2 },
+  { label: t('tools.si-prefixes-converter.texts.label-milli-m'), symbol: 'm', exponent: -3 },
+  { label: t('tools.si-prefixes-converter.texts.label-micro-µ'), symbol: 'µ', exponent: -6 },
+  { label: t('tools.si-prefixes-converter.texts.label-nano-n'), symbol: 'n', exponent: -9 },
+  { label: t('tools.si-prefixes-converter.texts.label-pico-p'), symbol: 'p', exponent: -12 },
+  { label: t('tools.si-prefixes-converter.texts.label-femto-f'), symbol: 'f', exponent: -15 },
+  { label: t('tools.si-prefixes-converter.texts.label-atto-a'), symbol: 'a', exponent: -18 },
+  { label: t('tools.si-prefixes-converter.texts.label-zepto-z'), symbol: 'z', exponent: -21 },
+  { label: t('tools.si-prefixes-converter.texts.label-yocto-y'), symbol: 'y', exponent: -24 },
+  { label: t('tools.si-prefixes-converter.texts.label-ronto-r'), symbol: 'r', exponent: -27 },
+  { label: t('tools.si-prefixes-converter.texts.label-quecto-q'), symbol: 'q', exponent: -30 },
 ];
 
 const prefixOptions = prefixes.map(p => ({
@@ -99,7 +102,7 @@ const displayValue = computed(() => {
 <template>
   <div>
     <NSpace justify="center" wrap>
-      <NFormItem label="Convert:" label-placement="left">
+      <NFormItem :label="t('tools.si-prefixes-converter.texts.label-convert')" label-placement="left">
         <n-input-number-i18n v-model:value="inputValue" mr-1 />
         <NSelect
           v-model:value="fromSymbol"
@@ -111,31 +114,31 @@ const displayValue = computed(() => {
     </NSpace>
 
     <NSpace justify="center">
-      <NFormItem label="Mode:" label-placement="left">
+      <NFormItem :label="t('tools.si-prefixes-converter.texts.label-mode')" label-placement="left">
         <NSelect
           v-model:value="formatMode"
           :options="[
-            { label: 'Auto', value: 'auto' },
-            { label: 'Fixed', value: 'fixed' },
-            { label: 'Exponential', value: 'exp' },
+            { label: t('tools.si-prefixes-converter.texts.label-auto'), value: 'auto' },
+            { label: t('tools.si-prefixes-converter.texts.label-fixed'), value: 'fixed' },
+            { label: t('tools.si-prefixes-converter.texts.label-exponential'), value: 'exp' },
           ]"
           style="width: 200px"
           filterable
         />
       </NFormItem>
-      <NFormItem label="Decimals:" label-placement="left">
+      <NFormItem :label="t('tools.si-prefixes-converter.texts.label-decimals')" label-placement="left">
         <NInputNumber v-model:value="decimals" :min="0" :max="60" style="width: 200px" />
       </NFormItem>
-      <NFormItem label="Thousand separators:" label-placement="left">
+      <NFormItem :label="t('tools.si-prefixes-converter.texts.label-thousand-separators')" label-placement="left">
         <NSwitch v-model:value="thousandSep" />
       </NFormItem>
     </NSpace>
 
     <NSpace justify="center" align="center" wrap>
-      <NFormItem label="To:" label-placement="left">
+      <NFormItem :label="t('tools.si-prefixes-converter.texts.label-to')" label-placement="left">
         <NSelect v-model:value="toSymbol" :options="prefixOptions" style="width: 200px" mr-1 />
         <NText mr-1>
-          =
+          {{ t('tools.si-prefixes-converter.texts.tag-') }}
         </NText>
         <input-copyable :value="displayValue" autosize style="width: 400px" />
       </NFormItem>

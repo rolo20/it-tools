@@ -7314,9 +7314,6 @@ tools:
     texts:
       placeholder-select-templates-e-g-node-python-vue: Wybierz szablony (np. node, python, vue)
       title-gitignore: .gitignore
-      tag-const-availabletemplates-ref: const availableTemplates = ref
-      tag-this-tool-use: "To narzędzie wykorzystuje:"
-      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
       tag-generate: Spowodować
   i-and-l-checker:
     title: Kontroler I i L
@@ -7467,10 +7464,6 @@ tools:
       label-short-urls-to-expand: "Krótkie adresy URL do rozwinięcia:"
       placeholder-enter-short-urls-one-per-line: Wprowadź krótkie adresy URL (jeden w każdym wierszu)
       title-result: Wynik
-      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
-        To narzędzie wykorzystuje https://cors-anywhere.com do ominięcia CORS.
-        Jest to serwer zarządzany przez społeczność.
-      tag-see-here-for-more-information: Więcej informacji znajdziesz tutaj
       tag-expand-all: Rozwiń wszystko
       tag-download-resuls-as-csv: Pobierz wyniki w formacie CSV
       tag-short-url: Krótki adres URL
@@ -7478,6 +7471,19 @@ tools:
       tag-link: Połączyć
       tag-status: Status
       tag-open-url: Otwórz adres URL
+      cors-anywhere-configuration: Konfiguracja CORS Anywhere
+      self-hosted-cors-anywhere: Samodzielnie hostowany CORS w dowolnym miejscu
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        To narzędzie wymaga instancji CORS Anywhere, aby ominąć zasady CORS.
+        Możesz użyć
+      put-your-cors-anywhere-instance-url: Wpisz adres URL swojej instancji CORS Anywhere...
+      cors-anywhere-instance-url: "Adres URL instancji CORS Anywhere:"
+      expanded-url: Rozszerzony adres URL
+      short-url: Krótki adres URL
+      failed-to-expand-some-urls: Nie udało się rozwinąć niektórych adresów URL.
+      failed: Przegrany
+      no-redirect: Brak przekierowania
+      expanded: Rozszerzony
   amortization-calculator:
     title: Kalkulator amortyzacji
     description: Oblicz harmonogramy spłat kredytu z podziałem na miesięczne raty
@@ -7662,6 +7668,72 @@ tools:
       tag-esc: ESC
       tag-exit-dead-pixel-mode: ": Wyjdź z trybu martwych pikseli"
       tag-start-dead-pixel: Rozpocznij Dead Pixel
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Wyklucz prefiksy SI
+    text:
+      si-converter: Przejdź do konwertera prefiksów SI
+  geo-coordinates-converter:
+    title: Konwerter współrzędnych geograficznych
+    description: Konwersja współrzędnych geograficznych pomiędzy WGS84, GCJ02, BD09
+      i CGCS2000
+    texts:
+      label-latitude: "Szerokość:"
+      label-longitude: "Długość geograficzna:"
+      label-csv-content-lng-lat: "Zawartość CSV (dł., szer.):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert:
+        Wpisz długość i szerokość geograficzną (w tej kolejności) w pliku CSV,
+        aby przekonwertować...
+      title-conversion-results: Wyniki konwersji
+      title-notes: Notatki
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (globalny standard)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (Gaode, mapy QQ)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (Mapy Baidu)
+      tag-bd09mc-bd09meter-baidu-meter: Miernik BD09MC/BD09 (miernik Baidu)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (Chiński System Geodezyjny 2000)
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: Konwertuj pojedynczy
+      tag-convert-batch: Konwertuj partię
+      tag-longitude-east-is-positive-west-is-negative: "Długość geograficzna: wschód jest dodatni, zachód ujemna."
+      tag-latitude-north-is-positive-south-is-negative: "Szerokość geograficzna: północ jest dodatnia, południe ujemna."
+  si-prefixes-converter:
+    title: Konwerter prefiksów SI
+    description: Konwersja między prefiksami metrycznymi
+    texts:
+      label-quetta-q: quetta (Q)
+      label-ronna-r: Ronna (z prawej)
+      label-yotta-y: Yotta (Y)
+      label-zetta-z: zetta (Z)
+      label-exa-e: przykład (E)
+      label-peta-p: mapa (P)
+      label-tera-t: tera (T)
+      label-giga-g: giga (G)
+      label-mega-m: mega (M)
+      label-kilo-k: kilogram (k)
+      label-hecto-h: hekto (h)
+      label-deca-da: dziesięć (od)
+      label-unit: jednostka
+      label-deci-d: więc (d)
+      label-centi-c: centy (c)
+      label-milli-m: narodowy (m)
+      label-micro-µ: mikro (µ)
+      label-nano-n: nano (n)
+      label-pico-p: piko (p)
+      label-femto-f: femto (f)
+      label-atto-a: akt (a)
+      label-zepto-z: zepto (z)
+      label-yocto-y: jokto (y)
+      label-ronto-r: ronto (r)
+      label-quecto-q: Jestem głodny.
+      label-auto: Automatyczny
+      label-fixed: Naprawił
+      label-exponential: Wykładniczy
+      label-convert: "Konwertować:"
+      label-mode: "Tryb:"
+      label-decimals: "Liczby dziesiętne:"
+      label-thousand-separators: "Separatory tysięcy:"
+      label-to: "Do:"
+      tag-: =
 favoriteButton:
   remove: Usuń z ulubionych
   add: Dodaj do ulubionych

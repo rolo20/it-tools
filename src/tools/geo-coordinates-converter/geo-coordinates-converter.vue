@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import detectCSV from 'detect-csv';
 import { flatten } from 'flatten-anything';
 import { convertFrom } from './geo-coordinates-converter.service';
 import { objectArrayToData } from '@/utils/objectarray.export';
 import { useQueryParam, useQueryParamOrStorage } from '@/composable/queryParams';
+
+const { t } = useI18n();
 
 const sourceSystem = useQueryParamOrStorage({ name: 'type', storageName: 'geo-coord-conv:t', defaultValue: 'BD09' });
 const inputLatitude = useQueryParam({ tool: 'geo-coord-conv', name: 'lat', defaultValue: 39.915 });
@@ -88,22 +91,22 @@ function toDMS(deg: number) {
     <n-radio-group v-model:value="sourceSystem" mb-2>
       <n-space justify="center">
         <n-radio value="WGS84">
-          WGS84/WSG1984/EPSG4326 (Global Standard)
+          {{ t('tools.geo-coordinates-converter.texts.tag-wgs84-wsg1984-epsg4326-global-standard') }}
         </n-radio>
         <n-radio value="GCJ02">
-          GCJ02/AMap (Gaode, QQ Maps)
+          {{ t('tools.geo-coordinates-converter.texts.tag-gcj02-amap-gaode-qq-maps') }}
         </n-radio>
         <n-radio value="BD09">
-          BD09/BD09LL/BMap (Baidu Maps)
+          {{ t('tools.geo-coordinates-converter.texts.tag-bd09-bd09ll-bmap-baidu-maps') }}
         </n-radio>
         <n-radio value="BD09MC">
-          BD09MC/BD09Meter (Baidu Meter)
+          {{ t('tools.geo-coordinates-converter.texts.tag-bd09mc-bd09meter-baidu-meter') }}
         </n-radio>
         <n-radio value="CGCS2000">
-          CGCS2000 (China Geodetic System 2000)
+          {{ t('tools.geo-coordinates-converter.texts.tag-cgcs2000-china-geodetic-system-2000') }}
         </n-radio>
         <n-radio value="WebMercator">
-          WebMercator/EPSG3857/EPSG900913
+          {{ t('tools.geo-coordinates-converter.texts.tag-webmercator-epsg3857-epsg900913') }}
         </n-radio>
       </n-space>
     </n-radio-group>
@@ -111,24 +114,24 @@ function toDMS(deg: number) {
     <n-tabs type="card" mb-1>
       <n-tab-pane name="single" tab="Single Lat/Lng Converter">
         <n-space justify="center">
-          <n-form-item label="Latitude:" label-placement="left">
+          <n-form-item :label="t('tools.geo-coordinates-converter.texts.label-latitude')" label-placement="left">
             <n-input-number-i18n v-model:value="inputLatitude" />
           </n-form-item>
-          <n-form-item label="Longitude:" label-placement="left">
+          <n-form-item :label="t('tools.geo-coordinates-converter.texts.label-longitude')" label-placement="left">
             <n-input-number-i18n v-model:value="inputLongitude" />
           </n-form-item>
         </n-space>
         <n-space justify="center">
           <n-button type="primary" @click="convertSingle">
-            Convert Single
+            {{ t('tools.geo-coordinates-converter.texts.tag-convert-single') }}
           </n-button>
         </n-space>
       </n-tab-pane>
       <n-tab-pane name="batch" tab="Batch Lat/Lng Converter">
         <c-input-text
           v-model:value="inputCSV"
-          label="CSV Content (Lng, Lat):"
-          placeholder="Put your Longitude and Latitude (in this order) CSV to convert..."
+          :label="t('tools.geo-coordinates-converter.texts.label-csv-content-lng-lat')"
+          :placeholder="t('tools.geo-coordinates-converter.texts.placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert')"
           multiline
           rows="5"
           mb-2
@@ -139,13 +142,13 @@ function toDMS(deg: number) {
             type="primary"
             @click="convertBatch"
           >
-            Convert Batch
+            {{ t('tools.geo-coordinates-converter.texts.tag-convert-batch') }}
           </n-button>
         </n-space>
       </n-tab-pane>
     </n-tabs>
 
-    <c-card v-if="resultsData?.length" title="Conversion Results" mb-2>
+    <c-card v-if="resultsData?.length" :title="t('tools.geo-coordinates-converter.texts.title-conversion-results')" mb-2>
       <n-data-table v-if="resultsDisplay?.length" :columns="columns" :data="resultsDisplay" bordered mb-2 />
 
       <n-space justify="center">
@@ -159,9 +162,8 @@ function toDMS(deg: number) {
       </n-space>
     </c-card>
 
-    <n-alert type="info" title="Notes" mt-3>
-      Longitude: East is positive, West is negative.<br>
-      Latitude: North is positive, South is negative.
+    <n-alert type="info" :title="t('tools.geo-coordinates-converter.texts.title-notes')" mt-3>
+      {{ t('tools.geo-coordinates-converter.texts.tag-longitude-east-is-positive-west-is-negative') }}<br>{{ t('tools.geo-coordinates-converter.texts.tag-latitude-north-is-positive-south-is-negative') }}
     </n-alert>
   </div>
 </template>

@@ -7432,9 +7432,6 @@ tools:
     texts:
       placeholder-select-templates-e-g-node-python-vue: Seleccionar plantillas (por ejemplo, node, python, vue)
       title-gitignore: .gitignore
-      tag-const-availabletemplates-ref: constante plantillasdisponibles = ref
-      tag-this-tool-use: "Esta herramienta utiliza:"
-      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
       tag-generate: Generar
   i-and-l-checker:
     title: Comprobador de I y L
@@ -7590,10 +7587,6 @@ tools:
       label-short-urls-to-expand: "URL cortas para expandir:"
       placeholder-enter-short-urls-one-per-line: Introduzca URL cortas (una por línea)
       title-result: Resultado
-      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
-        Esta herramienta utiliza https://cors-anywhere.com para evitar CORS. Es
-        un servidor gestionado por la comunidad.
-      tag-see-here-for-more-information: Ver aquí para más información
       tag-expand-all: Expandir todo
       tag-download-resuls-as-csv: Descargar resultados como CSV
       tag-short-url: URL corta
@@ -7601,6 +7594,19 @@ tools:
       tag-link: Enlace
       tag-status: Estado
       tag-open-url: Abrir URL
+      cors-anywhere-configuration: Configuración de CORS Anywhere
+      self-hosted-cors-anywhere: CORS en cualquier lugar autoalojado
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        Esta herramienta requiere una instancia de CORS Anywhere para omitir la
+        política de CORS. Puede usar una
+      put-your-cors-anywhere-instance-url: Coloque la URL de su instancia de CORS Anywhere...
+      cors-anywhere-instance-url: "URL de instancia de CORS Anywhere:"
+      expanded-url: URL expandida
+      short-url: URL corta
+      failed-to-expand-some-urls: No se pudo expandir algunas URL.
+      failed: Fallido
+      no-redirect: Sin redirección
+      expanded: Expandido
   amortization-calculator:
     title: Calculadora de amortización
     description: Calcular los cronogramas de amortización de préstamos con desgloses
@@ -7786,6 +7792,69 @@ tools:
       tag-esc: ESC
       tag-exit-dead-pixel-mode: ": Salir del modo de píxeles muertos"
       tag-start-dead-pixel: Iniciar Dead Pixel
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Excluir prefijos del SI
+    text:
+      si-converter: Convertidor de prefijos del SI
+  geo-coordinates-converter:
+    title: Conversor de coordenadas geográficas
+    description: Convertir coordenadas geográficas entre WGS84, GCJ02, BD09 y CGCS2000
+    texts:
+      label-latitude: "Latitud:"
+      label-longitude: "Longitud:"
+      label-csv-content-lng-lat: "Contenido CSV (Lng, Lat):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert: Coloque su Longitud y Latitud (en este orden) CSV para convertir...
+      title-conversion-results: Resultados de conversión
+      title-notes: Notas
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (Estándar global)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (Gaode, mapas QQ)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (Mapas Baidu)
+      tag-bd09mc-bd09meter-baidu-meter: Medidor BD09MC/BD09 (medidor Baidu)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (Sistema Geodésico de China 2000)
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: Convertir individual
+      tag-convert-batch: Convertir por lotes
+      tag-longitude-east-is-positive-west-is-negative: "Longitud: Este es positivo, Oeste es negativo."
+      tag-latitude-north-is-positive-south-is-negative: "Latitud: Norte es positivo, Sur es negativo."
+  si-prefixes-converter:
+    title: Convertidor de prefijos del SI
+    description: Convertir entre prefijos métricos
+    texts:
+      label-quetta-q: quetta (Q)
+      label-ronna-r: Ronna (derecha)
+      label-yotta-y: Yota (Y)
+      label-zetta-z: zetta (Z)
+      label-exa-e: exa (E)
+      label-peta-p: mapa (P)
+      label-tera-t: tera (T)
+      label-giga-g: giga (G)
+      label-mega-m: mega (M)
+      label-kilo-k: kilo (k)
+      label-hecto-h: hecto (h)
+      label-deca-da: diez (de)
+      label-unit: unidad
+      label-deci-d: entonces (d)
+      label-centi-c: centi (c)
+      label-milli-m: nacional (m)
+      label-micro-µ: micro (µ)
+      label-nano-n: nano (n)
+      label-pico-p: pico (p)
+      label-femto-f: femto (f)
+      label-atto-a: acto (a)
+      label-zepto-z: zepto (z)
+      label-yocto-y: yocto (y)
+      label-ronto-r: ronto (r)
+      label-quecto-q: Estoy hambriento.
+      label-auto: Auto
+      label-fixed: Fijado
+      label-exponential: Exponencial
+      label-convert: "Convertir:"
+      label-mode: "Modo:"
+      label-decimals: "Decimales:"
+      label-thousand-separators: "Separadores de miles:"
+      label-to: "A:"
+      tag-: =
 spanCopyable:
   copy: Copiar al portapapeles
   copied: Copiado!

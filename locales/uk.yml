@@ -7295,9 +7295,6 @@ tools:
     texts:
       placeholder-select-templates-e-g-node-python-vue: Виберіть шаблони (наприклад, node, python, vue)
       title-gitignore: .gitignore
-      tag-const-availabletemplates-ref: const availableTemplates = ref
-      tag-this-tool-use: "Цей інструмент використовується:"
-      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
       tag-generate: Згенерувати
   i-and-l-checker:
     title: Перевірка I та L
@@ -7448,10 +7445,6 @@ tools:
       label-short-urls-to-expand: "Короткі URL-адреси для розгортання:"
       placeholder-enter-short-urls-one-per-line: Введіть короткі URL-адреси (по одній на рядок)
       title-result: Результат
-      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
-        Цей інструмент використовує https://cors-anywhere.com для обходу CORS.
-        Це сервер, керований спільнотою.
-      tag-see-here-for-more-information: Дивіться тут для отримання додаткової інформації
       tag-expand-all: Розгорнути все
       tag-download-resuls-as-csv: Завантажити результати у форматі CSV
       tag-short-url: Коротка URL-адреса
@@ -7459,6 +7452,19 @@ tools:
       tag-link: Посилання
       tag-status: Статус
       tag-open-url: Відкрити URL-адресу
+      cors-anywhere-configuration: Конфігурація CORS Anywhere
+      self-hosted-cors-anywhere: Самостійно розміщений CORS будь-де
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        Для обходу політики CORS цьому інструменту потрібен екземпляр CORS
+        Anywhere. Ви можете використовувати
+      put-your-cors-anywhere-instance-url: Введіть URL-адресу вашого екземпляра CORS Anywhere...
+      cors-anywhere-instance-url: "URL-адреса екземпляра CORS Anywhere:"
+      expanded-url: Розгорнута URL-адреса
+      short-url: Коротка URL-адреса
+      failed-to-expand-some-urls: Не вдалося розгорнути деякі URL-адреси.
+      failed: Не вдалося
+      no-redirect: Без перенаправлення
+      expanded: Розгорнуто
   amortization-calculator:
     title: Калькулятор амортизації
     description: Розрахуйте графіки амортизації кредиту з щомісячною розбивкою платежів
@@ -7643,6 +7649,71 @@ tools:
       tag-esc: ESC
       tag-exit-dead-pixel-mode: Вихід з режиму мертвих пікселів
       tag-start-dead-pixel: Початок роботи з мертвими пікселями
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Виключити префікси СІ
+    text:
+      si-converter: Конвертер префіксів СІ Goto
+  geo-coordinates-converter:
+    title: Конвертер географічних координат
+    description: Конвертувати географічні координати між WGS84, GCJ02, BD09 та CGCS2000
+    texts:
+      label-latitude: "Широта:"
+      label-longitude: "Довгота:"
+      label-csv-content-lng-lat: "Вміст CSV (Lng, Lat):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert:
+        Вставте CSV-файл із даними про довготу та широту (у такому порядку) для
+        конвертації...
+      title-conversion-results: Результати конверсії
+      title-notes: Нотатки
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (глобальний стандарт)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (Gaode, QQ Maps)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (Карти Baidu)
+      tag-bd09mc-bd09meter-baidu-meter: BD09MC/BD09Meter (Baidu Meter)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (Китайська геодезична система 2000)
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: Конвертувати одинарний
+      tag-convert-batch: Пакетне перетворення
+      tag-longitude-east-is-positive-west-is-negative: "Довгота: схід – додатна, захід – від’ємна."
+      tag-latitude-north-is-positive-south-is-negative: "Широта: Північ – додатна, Південь – від’ємна."
+  si-prefixes-converter:
+    title: Конвертер префіксів СІ
+    description: Конвертувати між метричними префіксами
+    texts:
+      label-quetta-q: кветта (Q)
+      label-ronna-r: Ронна (R)
+      label-yotta-y: йотта (Y)
+      label-zetta-z: зетта (Z)
+      label-exa-e: екса (Е)
+      label-peta-p: карта (П)
+      label-tera-t: тера (Т)
+      label-giga-g: giga (G)
+      label-mega-m: мега (М)
+      label-kilo-k: кілограм (к)
+      label-hecto-h: гекто (год)
+      label-deca-da: десять (від)
+      label-unit: одиниця
+      label-deci-d: отже (г)
+      label-centi-c: центи (c)
+      label-milli-m: національний (м)
+      label-micro-µ: мікро (µ)
+      label-nano-n: нано (n)
+      label-pico-p: піко (п)
+      label-femto-f: фемто (ф)
+      label-atto-a: дія (а)
+      label-zepto-z: зепто (з)
+      label-yocto-y: йокто (у)
+      label-ronto-r: ронто (r)
+      label-quecto-q: Я голодний.
+      label-auto: Авто
+      label-fixed: Виправлено
+      label-exponential: Експоненціальний
+      label-convert: "Конвертувати:"
+      label-mode: "Режим:"
+      label-decimals: "Десяткові дроби:"
+      label-thousand-separators: "Роздільники тисяч:"
+      label-to: "До:"
+      tag-: =
 spanCopyable:
   copy: Копіювати в буфер обміну
   copied: Скопійовано!

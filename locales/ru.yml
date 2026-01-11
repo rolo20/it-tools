@@ -7326,9 +7326,6 @@ tools:
     texts:
       placeholder-select-templates-e-g-node-python-vue: Выберите шаблоны (например, node, python, vue)
       title-gitignore: .gitignore
-      tag-const-availabletemplates-ref: const availableTemplates = ref
-      tag-this-tool-use: "Этот инструмент использует:"
-      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
       tag-generate: Генерировать
   i-and-l-checker:
     title: Проверка I и L
@@ -7479,10 +7476,6 @@ tools:
       label-short-urls-to-expand: "Короткие URL-адреса для расширения:"
       placeholder-enter-short-urls-one-per-line: Введите короткие URL-адреса (по одному в строке)
       title-result: Результат
-      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server:
-        Этот инструмент использует https://cors-anywhere.com для обхода CORS.
-        Это сервер, управляемый сообществом.
-      tag-see-here-for-more-information: Более подробную информацию смотрите здесь.
       tag-expand-all: Развернуть все
       tag-download-resuls-as-csv: Загрузить результаты в формате CSV
       tag-short-url: Короткий URL
@@ -7490,6 +7483,19 @@ tools:
       tag-link: Связь
       tag-status: Статус
       tag-open-url: Открыть URL
+      cors-anywhere-configuration: Конфигурация CORS Anywhere
+      self-hosted-cors-anywhere: Самостоятельно размещенный CORS Anywhere
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        Для обхода политики CORS этому инструменту требуется экземпляр CORS
+        Anywhere. Вы можете использовать...
+      put-your-cors-anywhere-instance-url: Укажите URL-адрес вашего экземпляра CORS Anywhere...
+      cors-anywhere-instance-url: "URL экземпляра CORS Anywhere:"
+      expanded-url: Расширенный URL
+      short-url: Короткая ссылка
+      failed-to-expand-some-urls: Не удалось развернуть некоторые URL-адреса.
+      failed: Неуспешный
+      no-redirect: Перенаправление отсутствует
+      expanded: Расширенный
   amortization-calculator:
     title: Калькулятор амортизации
     description: Рассчитайте график амортизации кредита с разбивкой по ежемесячным платежам.
@@ -7675,6 +7681,73 @@ tools:
       tag-esc: ESC
       tag-exit-dead-pixel-mode: Выход из режима битых пикселей
       tag-start-dead-pixel: Начало работы над мертвым пикселем
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Исключить префиксы СИ
+    text:
+      si-converter: Перейти к конвертеру префиксов СИ
+  geo-coordinates-converter:
+    title: Конвертер географических координат
+    description: Преобразование географических координат между системами WGS84,
+      GCJ02, BD09 и CGCS2000.
+    texts:
+      label-latitude: "Широта:"
+      label-longitude: "Долгота:"
+      label-csv-content-lng-lat: "Содержимое CSV-файла (долгота, широта):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert:
+        Введите координаты долготы и широты (в указанном порядке) в формате CSV
+        для преобразования...
+      title-conversion-results: Результаты конверсии
+      title-notes: Примечания
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (глобальный стандарт)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (Gaode, QQ Maps)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (Карты Baidu)
+      tag-bd09mc-bd09meter-baidu-meter: BD09MC/BD09Meter (счетчик Baidu)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (Китайская геодезическая система 2000)
+      tag-webmercator-epsg3857-epsg900913: WebMercator/EPSG3857/EPSG900913
+      tag-convert-single: Преобразовать в одиночный
+      tag-convert-batch: Преобразовать пакет
+      tag-longitude-east-is-positive-west-is-negative: "Долгота: Восток – положительное значение, Запад – отрицательное."
+      tag-latitude-north-is-positive-south-is-negative: "Широта: Северная широта —
+        положительное значение, южная — отрицательное."
+  si-prefixes-converter:
+    title: Конвертер префиксов СИ
+    description: Преобразование между метрическими префиксами
+    texts:
+      label-quetta-q: кветта (Q)
+      label-ronna-r: Ронна (Р)
+      label-yotta-y: йотта (Y)
+      label-zetta-z: зетта (Z)
+      label-exa-e: экса (Е)
+      label-peta-p: карта (P)
+      label-tera-t: тера (Т)
+      label-giga-g: giga (G)
+      label-mega-m: мега (М)
+      label-kilo-k: кило (к)
+      label-hecto-h: гекто (г)
+      label-deca-da: десять (из)
+      label-unit: единица
+      label-deci-d: дерн)
+      label-centi-c: санти (с)
+      label-milli-m: национальный (м)
+      label-micro-µ: микро (мк)
+      label-nano-n: нано (н)
+      label-pico-p: пико (п)
+      label-femto-f: фемто (ф)
+      label-atto-a: акт (а)
+      label-zepto-z: зепто (z)
+      label-yocto-y: йокто (y)
+      label-ronto-r: ронто (р)
+      label-quecto-q: Я голоден.
+      label-auto: Авто
+      label-fixed: Зафиксированный
+      label-exponential: Экспоненциальный
+      label-convert: "Преобразовать:"
+      label-mode: "Режим:"
+      label-decimals: "Десятичные дроби:"
+      label-thousand-separators: "Тысяча разделителей:"
+      label-to: "К:"
+      tag-: =
 spanCopyable:
   copy: Копировать в буфер обмена
   copied: Скопировано!

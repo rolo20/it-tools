@@ -6890,9 +6890,6 @@ tools:
     texts:
       placeholder-select-templates-e-g-node-python-vue: "템플릿 선택(예: node, python, vue)"
       title-gitignore: .gitignore
-      tag-const-availabletemplates-ref: const 사용 가능한 템플릿 = 참조
-      tag-this-tool-use: 이 도구는 다음을 사용합니다.
-      tag-https-www-toptal-com-developers-gitignore: https://www.toptal.com/developers/gitignore
       tag-generate: 생성하다
   i-and-l-checker:
     title: I 및 L 체커
@@ -7041,8 +7038,6 @@ tools:
       label-short-urls-to-expand: "확장할 수 있는 짧은 URL:"
       placeholder-enter-short-urls-one-per-line: 짧은 URL을 입력하세요(한 줄에 하나씩)
       title-result: 결과
-      tag-this-tool-make-use-of-https-cors-anywhere-com-to-bypass-cors-this-is-a-community-driven-server: 이 도구는 https://cors-anywhere.com을 활용하여 CORS를 우회합니다. 이는 커뮤니티 기반 서버입니다.
-      tag-see-here-for-more-information: 자세한 내용은 여기를 참조하세요
       tag-expand-all: 모두 확장
       tag-download-resuls-as-csv: 결과를 CSV로 다운로드
       tag-short-url: 짧은 URL
@@ -7050,6 +7045,19 @@ tools:
       tag-link: 링크
       tag-status: 상태
       tag-open-url: URL 열기
+      cors-anywhere-configuration: CORS Anywhere 구성
+      self-hosted-cors-anywhere: 자체 호스팅 CORS Anywhere
+      this-tools-requires-a-cors-anywhere-instance-to-bypass-cors-policy-you-can-use-a:
+        이 도구를 사용하려면 CORS 정책을 우회하기 위해 CORS Anywhere 인스턴스가 필요합니다. CORS Anywhere
+        인스턴스를 사용할 수 있습니다.
+      put-your-cors-anywhere-instance-url: CORS Anywhere 인스턴스 URL을 입력하세요...
+      cors-anywhere-instance-url: "CORS Anywhere 인스턴스 URL:"
+      expanded-url: 확장된 URL
+      short-url: 짧은 URL
+      failed-to-expand-some-urls: 일부 URL을 펼치는 데 실패했습니다.
+      failed: 실패한
+      no-redirect: 리디렉션 없음
+      expanded: 퍼지는
   amortization-calculator:
     title: 상환 계산기
     description: 월별 상환 내역을 포함한 대출 상환 일정을 계산하세요.
@@ -7233,6 +7241,69 @@ tools:
       tag-esc: ESC
       tag-exit-dead-pixel-mode: ": 데드 픽셀 모드 종료"
       tag-start-dead-pixel: 데드 픽셀 시작
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: SI 접두사를 제외합니다
+    text:
+      si-converter: SI 접두사 변환기로 이동
+  geo-coordinates-converter:
+    title: 지리적 좌표 변환기
+    description: WGS84, GCJ02, BD09 및 CGCS2000 좌표계 간 변환
+    texts:
+      label-latitude: "위도:"
+      label-longitude: "경도:"
+      label-csv-content-lng-lat: "CSV 콘텐츠(경도, 위도):"
+      placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert: 변환할 경도와 위도(이 순서대로) CSV 파일을 입력하세요...
+      title-conversion-results: 전환 결과
+      title-notes: 메모
+      tag-wgs84-wsg1984-epsg4326-global-standard: WGS84/WSG1984/EPSG4326 (글로벌 표준)
+      tag-gcj02-amap-gaode-qq-maps: GCJ02/AMap (가오드, QQ 지도)
+      tag-bd09-bd09ll-bmap-baidu-maps: BD09/BD09LL/BMap (바이두 지도)
+      tag-bd09mc-bd09meter-baidu-meter: BD09MC/BD09Meter(바이두 미터)
+      tag-cgcs2000-china-geodetic-system-2000: CGCS2000 (중국 측지 시스템 2000)
+      tag-webmercator-epsg3857-epsg900913: 웹머케이터/EPSG3857/EPSG900913
+      tag-convert-single: 단일 변환
+      tag-convert-batch: 일괄 변환
+      tag-longitude-east-is-positive-west-is-negative: "경도: 동쪽은 양수, 서쪽은 음수입니다."
+      tag-latitude-north-is-positive-south-is-negative: "위도: 북쪽은 양수, 남쪽은 음수입니다."
+  si-prefixes-converter:
+    title: SI 접두사 변환기
+    description: 미터법 접두사 간 변환
+    texts:
+      label-quetta-q: 퀘타(Q)
+      label-ronna-r: 로나(R)
+      label-yotta-y: yotta (Y)
+      label-zetta-z: 제타(Z)
+      label-exa-e: exa(E)
+      label-peta-p: 지도(P)
+      label-tera-t: 테라(T)
+      label-giga-g: 기가(G)
+      label-mega-m: 메가(M)
+      label-kilo-k: 킬로그램(k)
+      label-hecto-h: 헥토(h)
+      label-deca-da: 10 (부터)
+      label-unit: 단위
+      label-deci-d: 그래서 (d)
+      label-centi-c: 센티(c)
+      label-milli-m: 국가 (m)
+      label-micro-µ: 마이크로(µ)
+      label-nano-n: 나노 (n)
+      label-pico-p: 피코(p)
+      label-femto-f: 펨토(f)
+      label-atto-a: 행위 (a)
+      label-zepto-z: 제프토(z)
+      label-yocto-y: 요크토(y)
+      label-ronto-r: 론토(r)
+      label-quecto-q: 나는 배고프다.
+      label-auto: 자동
+      label-fixed: 결정된
+      label-exponential: 지수적
+      label-convert: "전환하다:"
+      label-mode: "방법:"
+      label-decimals: "소수:"
+      label-thousand-separators: "천 단위 구분 기호:"
+      label-to: "에게:"
+      tag-: =
 about:
   alltools-title: 모든 {toolsCount}개 도구
   tools:
