@@ -7682,3 +7682,8 @@ tools:
       tag-esc: ESC
       tag-exit-dead-pixel-mode: ': Exit Dead Pixel Mode'
       tag-start-dead-pixel: Start Dead Pixel
+  UnitsConverter:
+    texts:
+      exclude-si-prefixes: Exclude SI Prefixes
+    text:
+      si-converter: Goto SI Prefixes Converter
