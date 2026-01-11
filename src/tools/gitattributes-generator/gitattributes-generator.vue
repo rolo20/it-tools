@@ -36,34 +36,36 @@ async function loadOptions() {
     lastFetched.value = now;
   }
   catch {
-    options.value = [
-      'ActionScript',
-      'Ada',
-      'Ballerina',
-      'C++',
-      'CSharp',
-      'Common',
-      'Delphi',
-      'Drupal',
-      'Fortran',
-      'Fountain',
-      'Go',
-      'Java',
-      'Lua',
-      'Matlab',
-      'ObjectiveC',
-      'Pascal',
-      'Perl',
-      'Python',
-      'R',
-      'Rails',
-      'Servoy',
-      'VisualStudio',
-      'Web',
-    ].map(name => ({
-      label: name,
-      value: name,
-    }));
+    if (!options.value?.length) {
+      options.value = [
+        'ActionScript',
+        'Ada',
+        'Ballerina',
+        'C++',
+        'CSharp',
+        'Common',
+        'Delphi',
+        'Drupal',
+        'Fortran',
+        'Fountain',
+        'Go',
+        'Java',
+        'Lua',
+        'Matlab',
+        'ObjectiveC',
+        'Pascal',
+        'Perl',
+        'Python',
+        'R',
+        'Rails',
+        'Servoy',
+        'VisualStudio',
+        'Web',
+      ].map(name => ({
+        label: name,
+        value: name,
+      }));
+    }
   }
 }
 
