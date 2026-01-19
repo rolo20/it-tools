@@ -38,7 +38,7 @@ test.describe('Tool - List converter', () => {
   });
 
   test('List input should be converted to column output and strip wrappers', async ({ page }) => {
-    await page.getByTestId('input').fill(`('test','test')`);
+    await page.getByTestId('input').fill('(\'test\',\'test\')');
     await page.getByTestId('outputAsColumn').check();
     await page.getByTestId('splitBySeparator').fill(',');
     await page.getByTestId('itemPrefix').fill('\'');
